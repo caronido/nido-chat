@@ -1,0 +1,3542 @@
+[2024-06-28 20:17:12 +0000] [3121] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ba7b2ab30a0>
+  on_reload: <function OnReload.on_reload at 0x7ba7b2ab31c0>
+  when_ready: <function WhenReady.when_ready at 0x7ba7b2ab32e0>
+  pre_fork: <function Prefork.pre_fork at 0x7ba7b2ab3400>
+  post_fork: <function Postfork.post_fork at 0x7ba7b2ab3520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ba7b2ab3640>
+  worker_int: <function WorkerInt.worker_int at 0x7ba7b2ab3760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ba7b2ab3880>
+  pre_exec: <function PreExec.pre_exec at 0x7ba7b2ab39a0>
+  pre_request: <function PreRequest.pre_request at 0x7ba7b2ab3ac0>
+  post_request: <function PostRequest.post_request at 0x7ba7b2ab3b50>
+  child_exit: <function ChildExit.child_exit at 0x7ba7b2ab3c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ba7b2ab3d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ba7b2ab3eb0>
+  on_exit: <function OnExit.on_exit at 0x7ba7b2ad8040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7ba7b2ad8160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 20:17:12 +0000] [3121] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 20:17:12 +0000] [3121] [DEBUG] Arbiter booted
+[2024-06-28 20:17:12 +0000] [3121] [INFO] Listening at: http://0.0.0.0:8000 (3121)
+[2024-06-28 20:17:12 +0000] [3121] [INFO] Using worker: sync
+[2024-06-28 20:17:12 +0000] [3122] [INFO] Booting worker with pid: 3122
+[2024-06-28 20:17:12 +0000] [3121] [DEBUG] 1 workers
+[2024-06-28 20:17:13 +0000] [3122] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/nido-bot/app.py", line 30, in <module>
+    import slack_bot
+  File "/home/ubuntu/nido-bot/slack_bot.py", line 33, in <module>
+    cached_llm = OpenAI(api_key=OPENAI_API_KEY)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/langchain_core/_api/deprecation.py", line 203, in warn_if_direct_instance
+    return wrapped(self, *args, **kwargs)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/pydantic/v1/main.py", line 341, in __init__
+    raise validation_error
+pydantic.v1.error_wrappers.ValidationError: 1 validation error for OpenAI
+__root__
+  Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named parameter. (type=value_error)
+[2024-06-28 20:17:13 +0000] [3122] [INFO] Worker exiting (pid: 3122)
+[2024-06-28 20:17:13 +0000] [3121] [ERROR] Worker (pid:3122) exited with code 3
+[2024-06-28 20:17:13 +0000] [3121] [ERROR] Shutting down: Master
+[2024-06-28 20:17:13 +0000] [3121] [ERROR] Reason: Worker failed to boot.
+[2024-06-28 20:17:14 +0000] [3123] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7232de1730a0>
+  on_reload: <function OnReload.on_reload at 0x7232de1731c0>
+  when_ready: <function WhenReady.when_ready at 0x7232de1732e0>
+  pre_fork: <function Prefork.pre_fork at 0x7232de173400>
+  post_fork: <function Postfork.post_fork at 0x7232de173520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7232de173640>
+  worker_int: <function WorkerInt.worker_int at 0x7232de173760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7232de173880>
+  pre_exec: <function PreExec.pre_exec at 0x7232de1739a0>
+  pre_request: <function PreRequest.pre_request at 0x7232de173ac0>
+  post_request: <function PostRequest.post_request at 0x7232de173b50>
+  child_exit: <function ChildExit.child_exit at 0x7232de173c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7232de173d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7232de173eb0>
+  on_exit: <function OnExit.on_exit at 0x7232de198040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7232de198160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 20:17:14 +0000] [3123] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 20:17:14 +0000] [3123] [DEBUG] Arbiter booted
+[2024-06-28 20:17:14 +0000] [3123] [INFO] Listening at: http://0.0.0.0:8000 (3123)
+[2024-06-28 20:17:14 +0000] [3123] [INFO] Using worker: sync
+[2024-06-28 20:17:14 +0000] [3124] [INFO] Booting worker with pid: 3124
+[2024-06-28 20:17:14 +0000] [3123] [DEBUG] 1 workers
+[2024-06-28 20:17:15 +0000] [3124] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/nido-bot/app.py", line 30, in <module>
+    import slack_bot
+  File "/home/ubuntu/nido-bot/slack_bot.py", line 33, in <module>
+    cached_llm = OpenAI(api_key=OPENAI_API_KEY)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/langchain_core/_api/deprecation.py", line 203, in warn_if_direct_instance
+    return wrapped(self, *args, **kwargs)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/pydantic/v1/main.py", line 341, in __init__
+    raise validation_error
+pydantic.v1.error_wrappers.ValidationError: 1 validation error for OpenAI
+__root__
+  Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named parameter. (type=value_error)
+[2024-06-28 20:17:15 +0000] [3124] [INFO] Worker exiting (pid: 3124)
+[2024-06-28 20:17:15 +0000] [3123] [ERROR] Worker (pid:3124) exited with code 3
+[2024-06-28 20:17:15 +0000] [3123] [ERROR] Shutting down: Master
+[2024-06-28 20:17:15 +0000] [3123] [ERROR] Reason: Worker failed to boot.
+[2024-06-28 20:17:15 +0000] [3125] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f88755c30a0>
+  on_reload: <function OnReload.on_reload at 0x7f88755c31c0>
+  when_ready: <function WhenReady.when_ready at 0x7f88755c32e0>
+  pre_fork: <function Prefork.pre_fork at 0x7f88755c3400>
+  post_fork: <function Postfork.post_fork at 0x7f88755c3520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f88755c3640>
+  worker_int: <function WorkerInt.worker_int at 0x7f88755c3760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f88755c3880>
+  pre_exec: <function PreExec.pre_exec at 0x7f88755c39a0>
+  pre_request: <function PreRequest.pre_request at 0x7f88755c3ac0>
+  post_request: <function PostRequest.post_request at 0x7f88755c3b50>
+  child_exit: <function ChildExit.child_exit at 0x7f88755c3c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f88755c3d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f88755c3eb0>
+  on_exit: <function OnExit.on_exit at 0x7f88755e8040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f88755e8160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 20:17:15 +0000] [3125] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 20:17:15 +0000] [3125] [DEBUG] Arbiter booted
+[2024-06-28 20:17:15 +0000] [3125] [INFO] Listening at: http://0.0.0.0:8000 (3125)
+[2024-06-28 20:17:15 +0000] [3125] [INFO] Using worker: sync
+[2024-06-28 20:17:15 +0000] [3126] [INFO] Booting worker with pid: 3126
+[2024-06-28 20:17:15 +0000] [3125] [DEBUG] 1 workers
+[2024-06-28 20:17:16 +0000] [3126] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/nido-bot/app.py", line 30, in <module>
+    import slack_bot
+  File "/home/ubuntu/nido-bot/slack_bot.py", line 33, in <module>
+    cached_llm = OpenAI(api_key=OPENAI_API_KEY)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/langchain_core/_api/deprecation.py", line 203, in warn_if_direct_instance
+    return wrapped(self, *args, **kwargs)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/pydantic/v1/main.py", line 341, in __init__
+    raise validation_error
+pydantic.v1.error_wrappers.ValidationError: 1 validation error for OpenAI
+__root__
+  Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named parameter. (type=value_error)
+[2024-06-28 20:17:16 +0000] [3126] [INFO] Worker exiting (pid: 3126)
+[2024-06-28 20:17:16 +0000] [3125] [ERROR] Worker (pid:3126) exited with code 3
+[2024-06-28 20:17:16 +0000] [3125] [ERROR] Shutting down: Master
+[2024-06-28 20:17:16 +0000] [3125] [ERROR] Reason: Worker failed to boot.
+[2024-06-28 20:17:17 +0000] [3127] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7e11c8bab0a0>
+  on_reload: <function OnReload.on_reload at 0x7e11c8bab1c0>
+  when_ready: <function WhenReady.when_ready at 0x7e11c8bab2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7e11c8bab400>
+  post_fork: <function Postfork.post_fork at 0x7e11c8bab520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7e11c8bab640>
+  worker_int: <function WorkerInt.worker_int at 0x7e11c8bab760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7e11c8bab880>
+  pre_exec: <function PreExec.pre_exec at 0x7e11c8bab9a0>
+  pre_request: <function PreRequest.pre_request at 0x7e11c8babac0>
+  post_request: <function PostRequest.post_request at 0x7e11c8babb50>
+  child_exit: <function ChildExit.child_exit at 0x7e11c8babc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7e11c8babd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7e11c8babeb0>
+  on_exit: <function OnExit.on_exit at 0x7e11c8bd0040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7e11c8bd0160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 20:17:17 +0000] [3127] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 20:17:17 +0000] [3127] [DEBUG] Arbiter booted
+[2024-06-28 20:17:17 +0000] [3127] [INFO] Listening at: http://0.0.0.0:8000 (3127)
+[2024-06-28 20:17:17 +0000] [3127] [INFO] Using worker: sync
+[2024-06-28 20:17:17 +0000] [3128] [INFO] Booting worker with pid: 3128
+[2024-06-28 20:17:17 +0000] [3127] [DEBUG] 1 workers
+[2024-06-28 20:17:18 +0000] [3128] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/nido-bot/app.py", line 30, in <module>
+    import slack_bot
+  File "/home/ubuntu/nido-bot/slack_bot.py", line 33, in <module>
+    cached_llm = OpenAI(api_key=OPENAI_API_KEY)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/langchain_core/_api/deprecation.py", line 203, in warn_if_direct_instance
+    return wrapped(self, *args, **kwargs)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/pydantic/v1/main.py", line 341, in __init__
+    raise validation_error
+pydantic.v1.error_wrappers.ValidationError: 1 validation error for OpenAI
+__root__
+  Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named parameter. (type=value_error)
+[2024-06-28 20:17:18 +0000] [3128] [INFO] Worker exiting (pid: 3128)
+[2024-06-28 20:17:18 +0000] [3127] [ERROR] Worker (pid:3128) exited with code 3
+[2024-06-28 20:17:18 +0000] [3127] [ERROR] Shutting down: Master
+[2024-06-28 20:17:18 +0000] [3127] [ERROR] Reason: Worker failed to boot.
+[2024-06-28 20:17:18 +0000] [3130] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7e4da71af0a0>
+  on_reload: <function OnReload.on_reload at 0x7e4da71af1c0>
+  when_ready: <function WhenReady.when_ready at 0x7e4da71af2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7e4da71af400>
+  post_fork: <function Postfork.post_fork at 0x7e4da71af520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7e4da71af640>
+  worker_int: <function WorkerInt.worker_int at 0x7e4da71af760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7e4da71af880>
+  pre_exec: <function PreExec.pre_exec at 0x7e4da71af9a0>
+  pre_request: <function PreRequest.pre_request at 0x7e4da71afac0>
+  post_request: <function PostRequest.post_request at 0x7e4da71afb50>
+  child_exit: <function ChildExit.child_exit at 0x7e4da71afc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7e4da71afd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7e4da71afeb0>
+  on_exit: <function OnExit.on_exit at 0x7e4da71d4040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7e4da71d4160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 20:17:18 +0000] [3130] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 20:17:18 +0000] [3130] [DEBUG] Arbiter booted
+[2024-06-28 20:17:18 +0000] [3130] [INFO] Listening at: http://0.0.0.0:8000 (3130)
+[2024-06-28 20:17:18 +0000] [3130] [INFO] Using worker: sync
+[2024-06-28 20:17:18 +0000] [3131] [INFO] Booting worker with pid: 3131
+[2024-06-28 20:17:18 +0000] [3130] [DEBUG] 1 workers
+[2024-06-28 20:17:19 +0000] [3131] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/nido-bot/app.py", line 30, in <module>
+    import slack_bot
+  File "/home/ubuntu/nido-bot/slack_bot.py", line 33, in <module>
+    cached_llm = OpenAI(api_key=OPENAI_API_KEY)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/langchain_core/_api/deprecation.py", line 203, in warn_if_direct_instance
+    return wrapped(self, *args, **kwargs)
+  File "/home/ubuntu/nido-bot/venv/lib/python3.10/site-packages/pydantic/v1/main.py", line 341, in __init__
+    raise validation_error
+pydantic.v1.error_wrappers.ValidationError: 1 validation error for OpenAI
+__root__
+  Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named parameter. (type=value_error)
+[2024-06-28 20:17:19 +0000] [3131] [INFO] Worker exiting (pid: 3131)
+[2024-06-28 20:17:19 +0000] [3130] [ERROR] Worker (pid:3131) exited with code 3
+[2024-06-28 20:17:19 +0000] [3130] [ERROR] Shutting down: Master
+[2024-06-28 20:17:19 +0000] [3130] [ERROR] Reason: Worker failed to boot.
+[2024-06-28 20:20:43 +0000] [3175] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7eddd8bab0a0>
+  on_reload: <function OnReload.on_reload at 0x7eddd8bab1c0>
+  when_ready: <function WhenReady.when_ready at 0x7eddd8bab2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7eddd8bab400>
+  post_fork: <function Postfork.post_fork at 0x7eddd8bab520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7eddd8bab640>
+  worker_int: <function WorkerInt.worker_int at 0x7eddd8bab760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7eddd8bab880>
+  pre_exec: <function PreExec.pre_exec at 0x7eddd8bab9a0>
+  pre_request: <function PreRequest.pre_request at 0x7eddd8babac0>
+  post_request: <function PostRequest.post_request at 0x7eddd8babb50>
+  child_exit: <function ChildExit.child_exit at 0x7eddd8babc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7eddd8babd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7eddd8babeb0>
+  on_exit: <function OnExit.on_exit at 0x7eddd8bd0040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7eddd8bd0160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 20:20:43 +0000] [3175] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 20:20:43 +0000] [3175] [DEBUG] Arbiter booted
+[2024-06-28 20:20:43 +0000] [3175] [INFO] Listening at: http://0.0.0.0:8000 (3175)
+[2024-06-28 20:20:43 +0000] [3175] [INFO] Using worker: sync
+[2024-06-28 20:20:43 +0000] [3176] [INFO] Booting worker with pid: 3176
+[2024-06-28 20:20:44 +0000] [3175] [DEBUG] 1 workers
+[2024-06-28 20:21:15 +0000] [3176] [DEBUG] GET /
+[2024-06-28 20:21:59 +0000] [3175] [INFO] Handling signal: term
+[2024-06-28 20:21:59 +0000] [3176] [INFO] Worker exiting (pid: 3176)
+[2024-06-28 20:21:59 +0000] [3175] [ERROR] Worker (pid:3176) was sent SIGTERM!
+[2024-06-28 20:22:00 +0000] [3175] [INFO] Shutting down: Master
+[2024-06-28 20:22:49 +0000] [354] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f06399ab0a0>
+  on_reload: <function OnReload.on_reload at 0x7f06399ab1c0>
+  when_ready: <function WhenReady.when_ready at 0x7f06399ab2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7f06399ab400>
+  post_fork: <function Postfork.post_fork at 0x7f06399ab520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f06399ab640>
+  worker_int: <function WorkerInt.worker_int at 0x7f06399ab760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f06399ab880>
+  pre_exec: <function PreExec.pre_exec at 0x7f06399ab9a0>
+  pre_request: <function PreRequest.pre_request at 0x7f06399abac0>
+  post_request: <function PostRequest.post_request at 0x7f06399abb50>
+  child_exit: <function ChildExit.child_exit at 0x7f06399abc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f06399abd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f06399abeb0>
+  on_exit: <function OnExit.on_exit at 0x7f06399d0040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f06399d0160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 20:22:49 +0000] [354] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 20:22:49 +0000] [354] [DEBUG] Arbiter booted
+[2024-06-28 20:22:49 +0000] [354] [INFO] Listening at: http://0.0.0.0:8000 (354)
+[2024-06-28 20:22:49 +0000] [354] [INFO] Using worker: sync
+[2024-06-28 20:22:49 +0000] [570] [INFO] Booting worker with pid: 570
+[2024-06-28 20:22:49 +0000] [354] [DEBUG] 1 workers
+[2024-06-28 20:55:55 +0000] [570] [DEBUG] GET /
+[2024-06-28 20:59:02 +0000] [570] [DEBUG] GET /
+[2024-06-28 20:59:21 +0000] [2082] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7a594abab5b0>
+  on_reload: <function OnReload.on_reload at 0x7a594abab6d0>
+  when_ready: <function WhenReady.when_ready at 0x7a594abab7f0>
+  pre_fork: <function Prefork.pre_fork at 0x7a594abab910>
+  post_fork: <function Postfork.post_fork at 0x7a594ababa30>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7a594ababb50>
+  worker_int: <function WorkerInt.worker_int at 0x7a594ababc70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7a594ababd90>
+  pre_exec: <function PreExec.pre_exec at 0x7a594ababeb0>
+  pre_request: <function PreRequest.pre_request at 0x7a594abd0040>
+  post_request: <function PostRequest.post_request at 0x7a594abd00d0>
+  child_exit: <function ChildExit.child_exit at 0x7a594abd01f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7a594abd0310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7a594abd0430>
+  on_exit: <function OnExit.on_exit at 0x7a594abd0550>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7a594abd0670>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 20:59:21 +0000] [2082] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 20:59:21 +0000] [2082] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-28 20:59:21 +0000] [2082] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-28 20:59:21 +0000] [2082] [ERROR] Retrying in 1 second.
+[2024-06-28 20:59:22 +0000] [2082] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-28 20:59:22 +0000] [2082] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-28 20:59:22 +0000] [2082] [ERROR] Retrying in 1 second.
+[2024-06-28 20:59:23 +0000] [2082] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-28 20:59:23 +0000] [2082] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-28 20:59:23 +0000] [2082] [ERROR] Retrying in 1 second.
+[2024-06-28 20:59:24 +0000] [2082] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-28 20:59:24 +0000] [2082] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-28 20:59:24 +0000] [2082] [ERROR] Retrying in 1 second.
+[2024-06-28 20:59:25 +0000] [2082] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-28 20:59:25 +0000] [2082] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-28 20:59:25 +0000] [2082] [ERROR] Retrying in 1 second.
+[2024-06-28 20:59:26 +0000] [2082] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-28 20:59:30 +0000] [570] [DEBUG] GET /
+[2024-06-28 21:01:47 +0000] [570] [DEBUG] GET /
+[2024-06-28 21:03:58 +0000] [354] [INFO] Handling signal: term
+[2024-06-28 21:03:58 +0000] [570] [INFO] Worker exiting (pid: 570)
+[2024-06-28 21:03:58 +0000] [354] [ERROR] Worker (pid:570) was sent SIGTERM!
+[2024-06-28 21:03:58 +0000] [354] [INFO] Shutting down: Master
+[2024-06-28 21:03:58 +0000] [2140] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7184602470a0>
+  on_reload: <function OnReload.on_reload at 0x7184602471c0>
+  when_ready: <function WhenReady.when_ready at 0x7184602472e0>
+  pre_fork: <function Prefork.pre_fork at 0x718460247400>
+  post_fork: <function Postfork.post_fork at 0x718460247520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x718460247640>
+  worker_int: <function WorkerInt.worker_int at 0x718460247760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x718460247880>
+  pre_exec: <function PreExec.pre_exec at 0x7184602479a0>
+  pre_request: <function PreRequest.pre_request at 0x718460247ac0>
+  post_request: <function PostRequest.post_request at 0x718460247b50>
+  child_exit: <function ChildExit.child_exit at 0x718460247c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x718460247d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x718460247eb0>
+  on_exit: <function OnExit.on_exit at 0x71846026c040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x71846026c160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 21:03:58 +0000] [2140] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 21:03:58 +0000] [2140] [DEBUG] Arbiter booted
+[2024-06-28 21:03:58 +0000] [2140] [INFO] Listening at: http://0.0.0.0:8000 (2140)
+[2024-06-28 21:03:58 +0000] [2140] [INFO] Using worker: sync
+[2024-06-28 21:03:58 +0000] [2142] [INFO] Booting worker with pid: 2142
+[2024-06-28 21:03:58 +0000] [2140] [DEBUG] 1 workers
+[2024-06-28 21:04:05 +0000] [2142] [DEBUG] GET /
+[2024-06-29 04:41:07 +0000] [2142] [DEBUG] GET /
+[2024-06-29 13:40:45 +0000] [2142] [DEBUG] GET /
+[2024-06-29 13:42:53 +0000] [2142] [INFO] Worker exiting (pid: 2142)
+[2024-06-29 13:42:53 +0000] [2140] [INFO] Handling signal: term
+[2024-06-29 13:42:53 +0000] [2140] [ERROR] Worker (pid:2142) was sent SIGTERM!
+[2024-06-29 13:42:53 +0000] [2140] [INFO] Shutting down: Master
+[2024-06-29 13:42:54 +0000] [23492] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7d3f0032b0a0>
+  on_reload: <function OnReload.on_reload at 0x7d3f0032b1c0>
+  when_ready: <function WhenReady.when_ready at 0x7d3f0032b2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7d3f0032b400>
+  post_fork: <function Postfork.post_fork at 0x7d3f0032b520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7d3f0032b640>
+  worker_int: <function WorkerInt.worker_int at 0x7d3f0032b760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7d3f0032b880>
+  pre_exec: <function PreExec.pre_exec at 0x7d3f0032b9a0>
+  pre_request: <function PreRequest.pre_request at 0x7d3f0032bac0>
+  post_request: <function PostRequest.post_request at 0x7d3f0032bb50>
+  child_exit: <function ChildExit.child_exit at 0x7d3f0032bc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7d3f0032bd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7d3f0032beb0>
+  on_exit: <function OnExit.on_exit at 0x7d3f00350040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7d3f00350160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-29 13:42:54 +0000] [23492] [INFO] Starting gunicorn 22.0.0
+[2024-06-29 13:42:54 +0000] [23492] [DEBUG] Arbiter booted
+[2024-06-29 13:42:54 +0000] [23492] [INFO] Listening at: http://0.0.0.0:8000 (23492)
+[2024-06-29 13:42:54 +0000] [23492] [INFO] Using worker: sync
+[2024-06-29 13:42:54 +0000] [23520] [INFO] Booting worker with pid: 23520
+[2024-06-29 13:42:54 +0000] [23492] [DEBUG] 1 workers
+[2024-06-29 13:59:30 +0000] [23520] [DEBUG] GET /
+[2024-06-29 14:01:47 +0000] [23520] [DEBUG] POST /
+[2024-06-29 14:02:11 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:04:26 +0000] [23520] [DEBUG] POST /
+[2024-06-29 14:06:00 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:06:01 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:06:01 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:06:01 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:06:16 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:06:17 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:07:05 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:07:05 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:07:17 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:12:09 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:12:09 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:12:17 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-29 14:45:56 +0000] [23520] [DEBUG] GET /appsettings.json
+[2024-06-29 14:45:56 +0000] [23520] [DEBUG] GET /test.php
+[2024-06-29 14:45:57 +0000] [23520] [DEBUG] GET /server.js
+[2024-06-29 14:45:58 +0000] [23520] [DEBUG] GET /phpinfo
+[2024-06-29 14:45:59 +0000] [23520] [DEBUG] GET /index.html
+[2024-06-29 14:46:00 +0000] [23520] [DEBUG] GET /.aws/credentials
+[2024-06-29 14:46:00 +0000] [23520] [DEBUG] GET /app.js
+[2024-06-29 14:46:11 +0000] [23520] [DEBUG] POST /
+[2024-06-29 15:10:14 +0000] [23520] [DEBUG] GET /
+[2024-06-29 15:10:23 +0000] [23520] [DEBUG] GET /
+[2024-06-29 15:10:24 +0000] [23520] [DEBUG] GET /favicon.ico
+[2024-06-29 15:26:20 +0000] [23520] [DEBUG] GET /
+[2024-06-29 15:56:45 +0000] [23520] [DEBUG] GET /.git/config
+[2024-06-29 16:02:24 +0000] [23520] [DEBUG] GET /
+[2024-06-29 16:02:36 +0000] [23520] [DEBUG] GET /
+[2024-06-29 16:54:57 +0000] [23520] [DEBUG] GET /
+[2024-06-29 17:27:26 +0000] [23520] [DEBUG] GET /
+[2024-06-29 17:27:38 +0000] [23520] [DEBUG] GET /
+[2024-06-29 17:27:38 +0000] [23520] [DEBUG] GET /favicon.ico
+[2024-06-29 17:30:49 +0000] [23520] [DEBUG] GET /
+[2024-06-29 18:12:22 +0000] [23520] [DEBUG] GET /.env
+[2024-06-29 19:41:38 +0000] [23520] [DEBUG] GET /.env
+[2024-06-29 19:41:39 +0000] [23520] [DEBUG] POST /
+[2024-06-29 19:47:10 +0000] [23520] [DEBUG] GET /.env
+[2024-06-29 19:47:10 +0000] [23520] [DEBUG] GET /api/.env
+[2024-06-29 19:47:22 +0000] [23520] [DEBUG] GET /.env.example
+[2024-06-29 19:47:22 +0000] [23520] [DEBUG] GET /API/.env
+[2024-06-29 19:47:22 +0000] [23520] [DEBUG] GET /_profiler/phpinfo
+[2024-06-29 19:47:23 +0000] [23520] [DEBUG] GET /admin/.env
+[2024-06-29 19:47:24 +0000] [23520] [DEBUG] GET /.env.sample
+[2024-06-29 19:47:25 +0000] [23520] [DEBUG] GET /core/.env
+[2024-06-29 19:47:25 +0000] [23520] [DEBUG] GET /server/.env
+[2024-06-29 19:47:26 +0000] [23520] [DEBUG] GET /vendor/.env
+[2024-06-29 19:47:27 +0000] [23520] [DEBUG] GET /lib/.env
+[2024-06-29 19:47:27 +0000] [23520] [DEBUG] GET /cronlab/.env
+[2024-06-29 19:47:28 +0000] [23520] [DEBUG] GET /database/.env
+[2024-06-29 19:47:39 +0000] [23520] [DEBUG] GET /config/.env
+[2024-06-29 19:47:51 +0000] [23520] [DEBUG] GET /assets/.env
+[2024-06-29 19:47:52 +0000] [23520] [DEBUG] GET /app/.env
+[2024-06-29 19:47:53 +0000] [23520] [DEBUG] GET /apps/.env
+[2024-06-29 19:47:54 +0000] [23520] [DEBUG] GET /uploads/.env
+[2024-06-29 19:48:06 +0000] [23520] [DEBUG] GET /cgi-bin
+[2024-06-29 19:48:08 +0000] [23520] [DEBUG] GET /sitemaps/.env
+[2024-06-29 19:48:10 +0000] [23520] [DEBUG] GET /site/.env
+[2024-06-29 19:48:11 +0000] [23520] [DEBUG] GET /web/.env
+[2024-06-29 19:48:12 +0000] [23520] [DEBUG] GET /public/.env
+[2024-06-29 19:48:24 +0000] [23520] [DEBUG] GET /en/.env
+[2024-06-29 19:48:24 +0000] [23520] [DEBUG] GET /tools/.env
+[2024-06-29 19:48:25 +0000] [23520] [DEBUG] GET /v1/.env
+[2024-06-29 19:48:37 +0000] [23520] [DEBUG] GET /administrator/.env
+[2024-06-29 19:48:48 +0000] [23520] [DEBUG] GET /laravel/.env
+[2024-06-29 19:48:59 +0000] [23520] [DEBUG] GET /.environment
+[2024-06-29 19:49:01 +0000] [23520] [DEBUG] GET /cgi-bin/phpinfo.php
+[2024-06-29 20:04:09 +0000] [23520] [DEBUG] GET /
+[2024-06-29 20:04:09 +0000] [23520] [DEBUG] GET /aspera/faspex/
+[2024-06-29 20:35:51 +0000] [23520] [DEBUG] GET /
+[2024-06-29 20:59:42 +0000] [23520] [DEBUG] GET /.env
+[2024-06-29 20:59:42 +0000] [23520] [DEBUG] POST /
+[2024-06-29 22:02:01 +0000] [23520] [DEBUG] GET /
+[2024-06-29 22:07:59 +0000] [23520] [DEBUG] GET /
+[2024-06-29 22:19:26 +0000] [23520] [DEBUG] GET /
+[2024-06-29 22:24:35 +0000] [23520] [DEBUG] GET /backend/.env
+[2024-06-29 22:24:38 +0000] [23520] [DEBUG] GET /project/.env
+[2024-06-29 23:00:54 +0000] [23520] [DEBUG] GET /
+[2024-06-29 23:35:12 +0000] [23520] [DEBUG] GET /.env
+[2024-06-29 23:35:13 +0000] [23520] [DEBUG] POST /
+[2024-06-30 00:12:07 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 00:12:07 +0000] [23520] [DEBUG] POST /
+[2024-06-30 00:44:26 +0000] [23520] [DEBUG] GET /
+[2024-06-30 00:47:31 +0000] [23520] [DEBUG] GET /
+[2024-06-30 00:52:01 +0000] [23520] [DEBUG] GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:02 +0000] [23520] [DEBUG] GET /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:02 +0000] [23520] [DEBUG] GET /vendor/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:03 +0000] [23520] [DEBUG] GET /vendor/phpunit/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:03 +0000] [23520] [DEBUG] GET /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+[2024-06-30 00:52:04 +0000] [23520] [DEBUG] GET /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:04 +0000] [23520] [DEBUG] GET /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:06 +0000] [23520] [DEBUG] GET /phpunit/phpunit/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:06 +0000] [23520] [DEBUG] GET /phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:07 +0000] [23520] [DEBUG] GET /phpunit/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:07 +0000] [23520] [DEBUG] GET /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:08 +0000] [23520] [DEBUG] GET /lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:08 +0000] [23520] [DEBUG] GET /lib/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:09 +0000] [23520] [DEBUG] GET /lib/phpunit/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:10 +0000] [23520] [DEBUG] GET /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:11 +0000] [23520] [DEBUG] GET /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:12 +0000] [23520] [DEBUG] GET /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:13 +0000] [23520] [DEBUG] GET /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:13 +0000] [23520] [DEBUG] GET /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:15 +0000] [23520] [DEBUG] GET /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:17 +0000] [23520] [DEBUG] GET /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:17 +0000] [23520] [DEBUG] GET /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:18 +0000] [23520] [DEBUG] GET /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:18 +0000] [23520] [DEBUG] GET /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:19 +0000] [23520] [DEBUG] GET /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:20 +0000] [23520] [DEBUG] GET /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:21 +0000] [23520] [DEBUG] GET /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:21 +0000] [23520] [DEBUG] GET /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:22 +0000] [23520] [DEBUG] GET /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:22 +0000] [23520] [DEBUG] GET /admin/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:23 +0000] [23520] [DEBUG] GET /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:24 +0000] [23520] [DEBUG] GET /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:26 +0000] [23520] [DEBUG] GET /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 00:52:27 +0000] [23520] [DEBUG] GET /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[2024-06-30 01:38:04 +0000] [23520] [DEBUG] GET /
+[2024-06-30 01:42:03 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 01:42:04 +0000] [23520] [DEBUG] POST /
+[2024-06-30 02:32:13 +0000] [23520] [DEBUG] GET /
+[2024-06-30 02:32:20 +0000] [23520] [DEBUG] GET /ext-js/app/common/zld_product_spec.js
+[2024-06-30 02:34:41 +0000] [23520] [DEBUG] GET /
+[2024-06-30 02:34:41 +0000] [23520] [DEBUG] GET /wp-content/plugins/wp-central/readme.txt
+[2024-06-30 03:05:52 +0000] [23520] [DEBUG] GET /
+[2024-06-30 03:23:50 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 03:23:50 +0000] [23520] [DEBUG] POST /
+[2024-06-30 04:10:06 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 04:10:06 +0000] [23520] [DEBUG] POST /
+[2024-06-30 04:30:10 +0000] [23520] [DEBUG] HEAD /
+[2024-06-30 04:30:11 +0000] [23520] [DEBUG] GET /
+[2024-06-30 04:51:54 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 04:51:54 +0000] [23520] [DEBUG] POST /
+[2024-06-30 05:28:02 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 06:01:16 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 06:01:16 +0000] [23520] [DEBUG] POST /
+[2024-06-30 06:03:56 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 06:03:56 +0000] [23520] [DEBUG] POST /
+[2024-06-30 06:08:27 +0000] [23520] [DEBUG] GET /boaform/admin/formLogin
+[2024-06-30 06:11:48 +0000] [23520] [DEBUG] POST /cmd,/simZysh/register_main/setCookie
+[2024-06-30 06:59:33 +0000] [23520] [DEBUG] GET /
+[2024-06-30 07:08:11 +0000] [23520] [DEBUG] GET /
+[2024-06-30 07:08:20 +0000] [23520] [DEBUG] GET /
+[2024-06-30 07:08:20 +0000] [23520] [DEBUG] GET /favicon.ico
+[2024-06-30 07:31:14 +0000] [23520] [DEBUG] GET /
+[2024-06-30 07:32:07 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 07:32:09 +0000] [23520] [DEBUG] POST /
+[2024-06-30 07:47:27 +0000] [23520] [DEBUG] GET /
+[2024-06-30 08:05:56 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 08:05:56 +0000] [23520] [DEBUG] POST /
+[2024-06-30 08:40:55 +0000] [23520] [DEBUG] GET /
+[2024-06-30 08:59:23 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 08:59:25 +0000] [23520] [DEBUG] POST /
+[2024-06-30 09:15:41 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 09:15:41 +0000] [23520] [DEBUG] POST /
+[2024-06-30 10:13:25 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 11:02:39 +0000] [23520] [DEBUG] GET /
+[2024-06-30 11:05:06 +0000] [23520] [DEBUG] GET /webui/
+[2024-06-30 11:06:05 +0000] [23520] [DEBUG] GET /favicon.ico
+[2024-06-30 11:07:03 +0000] [23520] [DEBUG] GET /geoserver/web/
+[2024-06-30 11:31:21 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 11:31:22 +0000] [23520] [DEBUG] POST /
+[2024-06-30 11:40:25 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 11:40:25 +0000] [23520] [DEBUG] POST /
+[2024-06-30 12:03:56 +0000] [23520] [DEBUG] GET /
+[2024-06-30 12:03:57 +0000] [23520] [DEBUG] GET /form.html
+[2024-06-30 12:03:57 +0000] [23520] [DEBUG] GET /upl.php
+[2024-06-30 12:03:58 +0000] [23520] [DEBUG] GET /geoip/
+[2024-06-30 12:03:59 +0000] [23520] [DEBUG] GET /favicon.ico
+[2024-06-30 12:03:59 +0000] [23520] [DEBUG] GET /1.php
+[2024-06-30 12:04:00 +0000] [23520] [DEBUG] GET /bundle.js
+[2024-06-30 12:04:01 +0000] [23520] [DEBUG] GET /files/
+[2024-06-30 12:04:01 +0000] [23520] [DEBUG] GET /systembc/password.php
+[2024-06-30 12:04:02 +0000] [23520] [DEBUG] GET /password.php
+[2024-06-30 12:04:02 +0000] [23520] [DEBUG] GET /info.php
+[2024-06-30 13:23:26 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 13:26:41 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 13:26:41 +0000] [23520] [DEBUG] POST /
+[2024-06-30 14:01:58 +0000] [23520] [DEBUG] GET /
+[2024-06-30 14:43:48 +0000] [23520] [DEBUG] GET /
+[2024-06-30 14:43:48 +0000] [23520] [DEBUG] GET /wp-content/plugins/wp-video-lightbox/readme.txt
+[2024-06-30 15:18:04 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 15:18:04 +0000] [23520] [DEBUG] POST /
+[2024-06-30 15:22:39 +0000] [23520] [DEBUG] GET /login/
+[2024-06-30 16:18:08 +0000] [23520] [DEBUG] GET /
+[2024-06-30 16:35:47 +0000] [23520] [DEBUG] GET /.env
+[2024-06-30 16:35:49 +0000] [23520] [DEBUG] POST /
+[2024-06-30 17:13:28 +0000] [23520] [DEBUG] GET /
+[2024-06-30 17:21:07 +0000] [23520] [DEBUG] GET /
+[2024-06-30 17:22:59 +0000] [23520] [DEBUG] GET /favicon.ico
+[2024-06-30 17:24:13 +0000] [23520] [DEBUG] GET /
+[2024-06-30 17:25:57 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:25:58 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:25:58 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:25:58 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:26:58 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:26:58 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:31:58 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:31:58 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:33:19 +0000] [25493] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7a54caa0b0a0>
+  on_reload: <function OnReload.on_reload at 0x7a54caa0b1c0>
+  when_ready: <function WhenReady.when_ready at 0x7a54caa0b2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7a54caa0b400>
+  post_fork: <function Postfork.post_fork at 0x7a54caa0b520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7a54caa0b640>
+  worker_int: <function WorkerInt.worker_int at 0x7a54caa0b760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7a54caa0b880>
+  pre_exec: <function PreExec.pre_exec at 0x7a54caa0b9a0>
+  pre_request: <function PreRequest.pre_request at 0x7a54caa0bac0>
+  post_request: <function PostRequest.post_request at 0x7a54caa0bb50>
+  child_exit: <function ChildExit.child_exit at 0x7a54caa0bc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7a54caa0bd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7a54caa0beb0>
+  on_exit: <function OnExit.on_exit at 0x7a54caa34040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7a54caa34160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 17:33:19 +0000] [25493] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 17:33:19 +0000] [25493] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 17:33:19 +0000] [25493] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 17:33:19 +0000] [25493] [ERROR] Retrying in 1 second.
+[2024-06-30 17:33:20 +0000] [25493] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 17:33:20 +0000] [25493] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 17:33:20 +0000] [25493] [ERROR] Retrying in 1 second.
+[2024-06-30 17:33:21 +0000] [25493] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 17:33:21 +0000] [25493] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 17:33:21 +0000] [25493] [ERROR] Retrying in 1 second.
+[2024-06-30 17:33:22 +0000] [25493] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 17:33:22 +0000] [25493] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 17:33:22 +0000] [25493] [ERROR] Retrying in 1 second.
+[2024-06-30 17:33:23 +0000] [25493] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 17:33:23 +0000] [25493] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 17:33:23 +0000] [25493] [ERROR] Retrying in 1 second.
+[2024-06-30 17:33:24 +0000] [25493] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-30 17:33:52 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:33:52 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:34:52 +0000] [23520] [DEBUG] POST /slack/events
+[2024-06-30 17:37:04 +0000] [23492] [INFO] Handling signal: term
+[2024-06-30 17:37:04 +0000] [23520] [INFO] Worker exiting (pid: 23520)
+[2024-06-30 17:37:04 +0000] [23492] [ERROR] Worker (pid:23520) was sent SIGTERM!
+[2024-06-30 17:37:04 +0000] [23492] [INFO] Shutting down: Master
+[2024-06-30 17:37:05 +0000] [25519] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ccf00f730a0>
+  on_reload: <function OnReload.on_reload at 0x7ccf00f731c0>
+  when_ready: <function WhenReady.when_ready at 0x7ccf00f732e0>
+  pre_fork: <function Prefork.pre_fork at 0x7ccf00f73400>
+  post_fork: <function Postfork.post_fork at 0x7ccf00f73520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ccf00f73640>
+  worker_int: <function WorkerInt.worker_int at 0x7ccf00f73760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ccf00f73880>
+  pre_exec: <function PreExec.pre_exec at 0x7ccf00f739a0>
+  pre_request: <function PreRequest.pre_request at 0x7ccf00f73ac0>
+  post_request: <function PostRequest.post_request at 0x7ccf00f73b50>
+  child_exit: <function ChildExit.child_exit at 0x7ccf00f73c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ccf00f73d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ccf00f73eb0>
+  on_exit: <function OnExit.on_exit at 0x7ccf00f98040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7ccf00f98160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 17:37:05 +0000] [25519] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 17:37:05 +0000] [25519] [DEBUG] Arbiter booted
+[2024-06-30 17:37:05 +0000] [25519] [INFO] Listening at: http://0.0.0.0:8000 (25519)
+[2024-06-30 17:37:05 +0000] [25519] [INFO] Using worker: sync
+[2024-06-30 17:37:05 +0000] [25521] [INFO] Booting worker with pid: 25521
+[2024-06-30 17:37:05 +0000] [25519] [DEBUG] 1 workers
+[2024-06-30 17:37:16 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:37:16 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:38:07 +0000] [25521] [DEBUG] GET /
+[2024-06-30 17:39:52 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:39:52 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:40:14 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:40:14 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:40:14 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:40:15 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:42:27 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:42:27 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:42:27 +0000] [25521] [DEBUG] POST /slack/events
+[2024-06-30 17:57:57 +0000] [367] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7dd9fb7d70a0>
+  on_reload: <function OnReload.on_reload at 0x7dd9fb7d71c0>
+  when_ready: <function WhenReady.when_ready at 0x7dd9fb7d72e0>
+  pre_fork: <function Prefork.pre_fork at 0x7dd9fb7d7400>
+  post_fork: <function Postfork.post_fork at 0x7dd9fb7d7520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7dd9fb7d7640>
+  worker_int: <function WorkerInt.worker_int at 0x7dd9fb7d7760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7dd9fb7d7880>
+  pre_exec: <function PreExec.pre_exec at 0x7dd9fb7d79a0>
+  pre_request: <function PreRequest.pre_request at 0x7dd9fb7d7ac0>
+  post_request: <function PostRequest.post_request at 0x7dd9fb7d7b50>
+  child_exit: <function ChildExit.child_exit at 0x7dd9fb7d7c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7dd9fb7d7d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7dd9fb7d7eb0>
+  on_exit: <function OnExit.on_exit at 0x7dd9fb7fc040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7dd9fb7fc160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 17:57:57 +0000] [367] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 17:57:57 +0000] [367] [DEBUG] Arbiter booted
+[2024-06-30 17:57:57 +0000] [367] [INFO] Listening at: http://0.0.0.0:8000 (367)
+[2024-06-30 17:57:57 +0000] [367] [INFO] Using worker: sync
+[2024-06-30 17:57:57 +0000] [539] [INFO] Booting worker with pid: 539
+[2024-06-30 17:57:57 +0000] [367] [DEBUG] 1 workers
+[2024-06-30 18:19:13 +0000] [539] [DEBUG] GET /.env
+[2024-06-30 18:19:16 +0000] [539] [DEBUG] POST /
+[2024-06-30 19:48:43 +0000] [539] [DEBUG] GET /.env
+[2024-06-30 19:48:44 +0000] [539] [DEBUG] POST /
+[2024-06-30 20:29:15 +0000] [539] [DEBUG] GET /
+[2024-06-30 20:57:50 +0000] [539] [DEBUG] GET /.env
+[2024-06-30 20:57:50 +0000] [539] [DEBUG] POST /
+[2024-06-30 20:59:02 +0000] [539] [DEBUG] GET /
+[2024-06-30 21:04:24 +0000] [539] [DEBUG] GET /
+[2024-06-30 21:04:33 +0000] [539] [DEBUG] GET /
+[2024-06-30 21:04:34 +0000] [539] [DEBUG] GET /favicon.ico
+[2024-06-30 21:45:04 +0000] [539] [DEBUG] GET /
+[2024-06-30 21:47:07 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:47:08 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:47:08 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:48:12 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:48:12 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:53:15 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:53:15 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:53:16 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:54:21 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:54:21 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:54:22 +0000] [539] [DEBUG] POST /slack/events
+[2024-06-30 21:56:02 +0000] [539] [INFO] Worker exiting (pid: 539)
+[2024-06-30 21:56:03 +0000] [1071] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x776d335bf0a0>
+  on_reload: <function OnReload.on_reload at 0x776d335bf1c0>
+  when_ready: <function WhenReady.when_ready at 0x776d335bf2e0>
+  pre_fork: <function Prefork.pre_fork at 0x776d335bf400>
+  post_fork: <function Postfork.post_fork at 0x776d335bf520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x776d335bf640>
+  worker_int: <function WorkerInt.worker_int at 0x776d335bf760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x776d335bf880>
+  pre_exec: <function PreExec.pre_exec at 0x776d335bf9a0>
+  pre_request: <function PreRequest.pre_request at 0x776d335bfac0>
+  post_request: <function PostRequest.post_request at 0x776d335bfb50>
+  child_exit: <function ChildExit.child_exit at 0x776d335bfc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x776d335bfd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x776d335bfeb0>
+  on_exit: <function OnExit.on_exit at 0x776d335e4040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x776d335e4160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 21:56:03 +0000] [1071] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 21:56:03 +0000] [1071] [DEBUG] Arbiter booted
+[2024-06-30 21:56:03 +0000] [1071] [INFO] Listening at: http://0.0.0.0:8000 (1071)
+[2024-06-30 21:56:03 +0000] [1071] [INFO] Using worker: sync
+[2024-06-30 21:56:03 +0000] [1072] [INFO] Booting worker with pid: 1072
+[2024-06-30 21:56:03 +0000] [1071] [DEBUG] 1 workers
+[2024-06-30 21:56:19 +0000] [1072] [INFO] Worker exiting (pid: 1072)
+[2024-06-30 21:56:19 +0000] [1082] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x72e4d2fbf0a0>
+  on_reload: <function OnReload.on_reload at 0x72e4d2fbf1c0>
+  when_ready: <function WhenReady.when_ready at 0x72e4d2fbf2e0>
+  pre_fork: <function Prefork.pre_fork at 0x72e4d2fbf400>
+  post_fork: <function Postfork.post_fork at 0x72e4d2fbf520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x72e4d2fbf640>
+  worker_int: <function WorkerInt.worker_int at 0x72e4d2fbf760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x72e4d2fbf880>
+  pre_exec: <function PreExec.pre_exec at 0x72e4d2fbf9a0>
+  pre_request: <function PreRequest.pre_request at 0x72e4d2fbfac0>
+  post_request: <function PostRequest.post_request at 0x72e4d2fbfb50>
+  child_exit: <function ChildExit.child_exit at 0x72e4d2fbfc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x72e4d2fbfd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x72e4d2fbfeb0>
+  on_exit: <function OnExit.on_exit at 0x72e4d2fe4040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x72e4d2fe4160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 21:56:19 +0000] [1082] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 21:56:19 +0000] [1082] [DEBUG] Arbiter booted
+[2024-06-30 21:56:19 +0000] [1082] [INFO] Listening at: http://0.0.0.0:8000 (1082)
+[2024-06-30 21:56:19 +0000] [1082] [INFO] Using worker: sync
+[2024-06-30 21:56:19 +0000] [1083] [INFO] Booting worker with pid: 1083
+[2024-06-30 21:56:20 +0000] [1082] [DEBUG] 1 workers
+[2024-06-30 21:57:12 +0000] [1083] [INFO] Worker exiting (pid: 1083)
+[2024-06-30 21:57:12 +0000] [1093] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7136972b30a0>
+  on_reload: <function OnReload.on_reload at 0x7136972b31c0>
+  when_ready: <function WhenReady.when_ready at 0x7136972b32e0>
+  pre_fork: <function Prefork.pre_fork at 0x7136972b3400>
+  post_fork: <function Postfork.post_fork at 0x7136972b3520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7136972b3640>
+  worker_int: <function WorkerInt.worker_int at 0x7136972b3760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7136972b3880>
+  pre_exec: <function PreExec.pre_exec at 0x7136972b39a0>
+  pre_request: <function PreRequest.pre_request at 0x7136972b3ac0>
+  post_request: <function PostRequest.post_request at 0x7136972b3b50>
+  child_exit: <function ChildExit.child_exit at 0x7136972b3c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7136972b3d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7136972b3eb0>
+  on_exit: <function OnExit.on_exit at 0x7136972d8040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7136972d8160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 21:57:12 +0000] [1093] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 21:57:12 +0000] [1093] [DEBUG] Arbiter booted
+[2024-06-30 21:57:12 +0000] [1093] [INFO] Listening at: http://0.0.0.0:8000 (1093)
+[2024-06-30 21:57:12 +0000] [1093] [INFO] Using worker: sync
+[2024-06-30 21:57:12 +0000] [1094] [INFO] Booting worker with pid: 1094
+[2024-06-30 21:57:13 +0000] [1093] [DEBUG] 1 workers
+[2024-06-30 21:57:40 +0000] [1094] [INFO] Worker exiting (pid: 1094)
+[2024-06-30 21:57:40 +0000] [1100] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7cafa1fab0a0>
+  on_reload: <function OnReload.on_reload at 0x7cafa1fab1c0>
+  when_ready: <function WhenReady.when_ready at 0x7cafa1fab2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7cafa1fab400>
+  post_fork: <function Postfork.post_fork at 0x7cafa1fab520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7cafa1fab640>
+  worker_int: <function WorkerInt.worker_int at 0x7cafa1fab760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7cafa1fab880>
+  pre_exec: <function PreExec.pre_exec at 0x7cafa1fab9a0>
+  pre_request: <function PreRequest.pre_request at 0x7cafa1fabac0>
+  post_request: <function PostRequest.post_request at 0x7cafa1fabb50>
+  child_exit: <function ChildExit.child_exit at 0x7cafa1fabc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7cafa1fabd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7cafa1fabeb0>
+  on_exit: <function OnExit.on_exit at 0x7cafa1fd0040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7cafa1fd0160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 21:57:40 +0000] [1100] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 21:57:40 +0000] [1100] [DEBUG] Arbiter booted
+[2024-06-30 21:57:40 +0000] [1100] [INFO] Listening at: http://0.0.0.0:8000 (1100)
+[2024-06-30 21:57:40 +0000] [1100] [INFO] Using worker: sync
+[2024-06-30 21:57:40 +0000] [1101] [INFO] Booting worker with pid: 1101
+[2024-06-30 21:57:40 +0000] [1100] [DEBUG] 1 workers
+[2024-06-30 21:58:25 +0000] [1101] [DEBUG] POST /slack/events
+[2024-06-30 21:58:26 +0000] [1101] [DEBUG] POST /slack/events
+[2024-06-30 21:58:26 +0000] [1101] [DEBUG] POST /slack/events
+[2024-06-30 21:59:31 +0000] [1101] [INFO] Worker exiting (pid: 1101)
+[2024-06-30 21:59:32 +0000] [1115] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x71edc39bf0a0>
+  on_reload: <function OnReload.on_reload at 0x71edc39bf1c0>
+  when_ready: <function WhenReady.when_ready at 0x71edc39bf2e0>
+  pre_fork: <function Prefork.pre_fork at 0x71edc39bf400>
+  post_fork: <function Postfork.post_fork at 0x71edc39bf520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x71edc39bf640>
+  worker_int: <function WorkerInt.worker_int at 0x71edc39bf760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x71edc39bf880>
+  pre_exec: <function PreExec.pre_exec at 0x71edc39bf9a0>
+  pre_request: <function PreRequest.pre_request at 0x71edc39bfac0>
+  post_request: <function PostRequest.post_request at 0x71edc39bfb50>
+  child_exit: <function ChildExit.child_exit at 0x71edc39bfc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x71edc39bfd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x71edc39bfeb0>
+  on_exit: <function OnExit.on_exit at 0x71edc39e4040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x71edc39e4160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 21:59:32 +0000] [1115] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 21:59:32 +0000] [1115] [DEBUG] Arbiter booted
+[2024-06-30 21:59:32 +0000] [1115] [INFO] Listening at: http://0.0.0.0:8000 (1115)
+[2024-06-30 21:59:32 +0000] [1115] [INFO] Using worker: sync
+[2024-06-30 21:59:32 +0000] [1116] [INFO] Booting worker with pid: 1116
+[2024-06-30 21:59:32 +0000] [1115] [DEBUG] 1 workers
+[2024-06-30 21:59:52 +0000] [1116] [INFO] Worker exiting (pid: 1116)
+[2024-06-30 21:59:53 +0000] [1122] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7b3d1694b0a0>
+  on_reload: <function OnReload.on_reload at 0x7b3d1694b1c0>
+  when_ready: <function WhenReady.when_ready at 0x7b3d1694b2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7b3d1694b400>
+  post_fork: <function Postfork.post_fork at 0x7b3d1694b520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7b3d1694b640>
+  worker_int: <function WorkerInt.worker_int at 0x7b3d1694b760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7b3d1694b880>
+  pre_exec: <function PreExec.pre_exec at 0x7b3d1694b9a0>
+  pre_request: <function PreRequest.pre_request at 0x7b3d1694bac0>
+  post_request: <function PostRequest.post_request at 0x7b3d1694bb50>
+  child_exit: <function ChildExit.child_exit at 0x7b3d1694bc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7b3d1694bd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7b3d1694beb0>
+  on_exit: <function OnExit.on_exit at 0x7b3d16970040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7b3d16970160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 21:59:53 +0000] [1122] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 21:59:53 +0000] [1122] [DEBUG] Arbiter booted
+[2024-06-30 21:59:53 +0000] [1122] [INFO] Listening at: http://0.0.0.0:8000 (1122)
+[2024-06-30 21:59:53 +0000] [1122] [INFO] Using worker: sync
+[2024-06-30 21:59:53 +0000] [1123] [INFO] Booting worker with pid: 1123
+[2024-06-30 21:59:53 +0000] [1122] [DEBUG] 1 workers
+[2024-06-30 22:00:24 +0000] [1122] [INFO] Handling signal: term
+[2024-06-30 22:00:24 +0000] [1123] [INFO] Worker exiting (pid: 1123)
+[2024-06-30 22:00:24 +0000] [1122] [ERROR] Worker (pid:1123) was sent SIGTERM!
+[2024-06-30 22:00:24 +0000] [1122] [INFO] Shutting down: Master
+[2024-06-30 22:04:06 +0000] [1222] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7a0960d730a0>
+  on_reload: <function OnReload.on_reload at 0x7a0960d731c0>
+  when_ready: <function WhenReady.when_ready at 0x7a0960d732e0>
+  pre_fork: <function Prefork.pre_fork at 0x7a0960d73400>
+  post_fork: <function Postfork.post_fork at 0x7a0960d73520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7a0960d73640>
+  worker_int: <function WorkerInt.worker_int at 0x7a0960d73760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7a0960d73880>
+  pre_exec: <function PreExec.pre_exec at 0x7a0960d739a0>
+  pre_request: <function PreRequest.pre_request at 0x7a0960d73ac0>
+  post_request: <function PostRequest.post_request at 0x7a0960d73b50>
+  child_exit: <function ChildExit.child_exit at 0x7a0960d73c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7a0960d73d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7a0960d73eb0>
+  on_exit: <function OnExit.on_exit at 0x7a0960d98040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7a0960d98160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 22:04:06 +0000] [1222] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 22:04:06 +0000] [1222] [DEBUG] Arbiter booted
+[2024-06-30 22:04:06 +0000] [1222] [INFO] Listening at: http://0.0.0.0:8000 (1222)
+[2024-06-30 22:04:06 +0000] [1222] [INFO] Using worker: sync
+[2024-06-30 22:04:06 +0000] [1223] [INFO] Booting worker with pid: 1223
+[2024-06-30 22:04:06 +0000] [1222] [DEBUG] 1 workers
+[2024-06-30 22:04:33 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:04:33 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:04:34 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:04:40 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:05:30 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:05:30 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:05:30 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:06:01 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:06:12 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:06:22 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:06:54 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:06:55 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:07:04 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:07:15 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:07:19 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:07:39 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:09:05 +0000] [1223] [DEBUG] GET /
+[2024-06-30 22:09:34 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:09:37 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:09:56 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:09:59 +0000] [1223] [DEBUG] POST /slack/events
+[2024-06-30 22:15:47 +0000] [1223] [DEBUG] GET /.git/config
+[2024-06-30 22:28:44 +0000] [1223] [DEBUG] HEAD /
+[2024-06-30 22:40:50 +0000] [1223] [DEBUG] GET /
+[2024-06-30 22:40:50 +0000] [1223] [DEBUG] GET /odinhttpcall1719787250
+[2024-06-30 22:40:50 +0000] [1223] [DEBUG] GET /
+[2024-06-30 22:40:50 +0000] [1223] [DEBUG] POST /sdk
+[2024-06-30 22:40:50 +0000] [1223] [DEBUG] GET /HNAP1
+[2024-06-30 22:40:50 +0000] [1223] [DEBUG] GET /evox/about
+[2024-06-30 22:40:51 +0000] [1223] [DEBUG] GET /
+[2024-06-30 22:40:51 +0000] [1223] [DEBUG] GET /
+[2024-06-30 22:40:51 +0000] [1223] [DEBUG] GET /v2/_catalog
+[2024-06-30 22:40:51 +0000] [1223] [DEBUG] GET /query
+[2024-06-30 22:40:51 +0000] [1223] [DEBUG] GET /
+[2024-06-30 22:40:51 +0000] [1223] [DEBUG] GET /cgi-bin/authLogin.cgi
+[2024-06-30 22:40:51 +0000] [1223] [DEBUG] GET /solr/admin/info/system
+[2024-06-30 22:40:51 +0000] [1223] [DEBUG] GET /solr/admin/cores
+[2024-06-30 23:26:03 +0000] [1223] [DEBUG] GET /
+[2024-06-30 23:31:15 +0000] [1223] [DEBUG] GET /
+[2024-07-01 00:12:48 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 00:12:49 +0000] [1223] [DEBUG] POST /
+[2024-07-01 00:31:50 +0000] [1223] [DEBUG] GET /.git/config
+[2024-07-01 01:33:12 +0000] [1223] [DEBUG] OPTIONS /
+[2024-07-01 01:40:24 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 01:40:25 +0000] [1223] [DEBUG] POST /
+[2024-07-01 01:43:17 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 01:43:17 +0000] [1223] [DEBUG] POST /
+[2024-07-01 01:45:06 +0000] [1223] [DEBUG] GET /
+[2024-07-01 01:47:38 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 01:47:43 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 01:53:50 +0000] [1223] [DEBUG] POST /boaform/admin/formLogin
+[2024-07-01 02:09:20 +0000] [1223] [DEBUG] GET /
+[2024-07-01 02:50:18 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 02:50:18 +0000] [1223] [DEBUG] POST /
+[2024-07-01 02:50:19 +0000] [1223] [DEBUG] GET /sendgrid/.env
+[2024-07-01 02:50:19 +0000] [1223] [DEBUG] POST /
+[2024-07-01 03:12:00 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 03:12:01 +0000] [1223] [DEBUG] POST /
+[2024-07-01 03:27:37 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 03:27:37 +0000] [1223] [DEBUG] POST /
+[2024-07-01 03:44:57 +0000] [1223] [DEBUG] GET /
+[2024-07-01 03:53:25 +0000] [1223] [DEBUG] GET /
+[2024-07-01 04:07:34 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 04:07:34 +0000] [1223] [DEBUG] POST /
+[2024-07-01 04:09:24 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 04:19:05 +0000] [1223] [DEBUG] GET /
+[2024-07-01 04:39:56 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 04:39:56 +0000] [1223] [DEBUG] POST /
+[2024-07-01 06:29:48 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 06:29:48 +0000] [1223] [DEBUG] POST /
+[2024-07-01 07:03:04 +0000] [1223] [DEBUG] GET /
+[2024-07-01 07:03:15 +0000] [1223] [DEBUG] GET /
+[2024-07-01 07:03:19 +0000] [1223] [DEBUG] GET /favicon.ico
+[2024-07-01 07:19:32 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 07:23:14 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 07:23:14 +0000] [1223] [DEBUG] POST /
+[2024-07-01 07:31:35 +0000] [1223] [DEBUG] GET /
+[2024-07-01 07:40:09 +0000] [1223] [DEBUG] GET /
+[2024-07-01 09:22:24 +0000] [1223] [DEBUG] GET /
+[2024-07-01 09:41:45 +0000] [1223] [DEBUG] GET /
+[2024-07-01 09:44:16 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 09:44:16 +0000] [1223] [DEBUG] POST /
+[2024-07-01 10:39:01 +0000] [1223] [DEBUG] GET /
+[2024-07-01 10:39:10 +0000] [1223] [DEBUG] GET /
+[2024-07-01 10:39:12 +0000] [1223] [DEBUG] GET /favicon.ico
+[2024-07-01 11:05:00 +0000] [1223] [DEBUG] GET /
+[2024-07-01 11:11:02 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 11:11:02 +0000] [1223] [DEBUG] POST /
+[2024-07-01 11:12:27 +0000] [1223] [DEBUG] GET /backend/.env
+[2024-07-01 11:12:27 +0000] [1223] [DEBUG] GET /project/.env
+[2024-07-01 11:12:27 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 11:12:28 +0000] [1223] [DEBUG] GET /adm/.env.bak
+[2024-07-01 11:36:43 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 11:36:43 +0000] [1223] [DEBUG] POST /
+[2024-07-01 11:51:03 +0000] [1223] [DEBUG] OPTIONS /
+[2024-07-01 12:35:48 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 12:35:48 +0000] [1223] [DEBUG] POST /
+[2024-07-01 13:05:40 +0000] [1223] [DEBUG] GET /
+[2024-07-01 13:06:22 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 13:06:23 +0000] [1223] [DEBUG] POST /
+[2024-07-01 13:27:49 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 13:27:49 +0000] [1223] [DEBUG] POST /
+[2024-07-01 14:52:55 +0000] [1223] [DEBUG] GET /.git/config
+[2024-07-01 14:59:26 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 14:59:26 +0000] [1223] [DEBUG] POST /
+[2024-07-01 16:02:25 +0000] [1223] [DEBUG] GET /
+[2024-07-01 16:23:41 +0000] [1223] [DEBUG] GET /
+[2024-07-01 16:23:41 +0000] [1223] [DEBUG] GET /favicon.ico
+[2024-07-01 16:23:41 +0000] [1223] [DEBUG] GET /robots.txt
+[2024-07-01 16:23:41 +0000] [1223] [DEBUG] GET /sitemap.xml
+[2024-07-01 16:27:29 +0000] [1223] [DEBUG] GET /1
+[2024-07-01 16:53:34 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 17:03:06 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 17:03:06 +0000] [1223] [DEBUG] POST /
+[2024-07-01 17:12:47 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:13:10 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:13:10 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:13:11 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:13:50 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:13:54 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:14:31 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:14:33 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:14:57 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:14:59 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:15:40 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:15:40 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:15:44 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:15:57 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:16:09 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:16:39 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:16:47 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:17:56 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:18:02 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:19:39 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:27:34 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-01 17:34:55 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 18:13:48 +0000] [1223] [DEBUG] GET /
+[2024-07-01 18:37:33 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 18:37:34 +0000] [1223] [DEBUG] POST /
+[2024-07-01 19:05:12 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 19:05:13 +0000] [1223] [DEBUG] POST /
+[2024-07-01 19:14:34 +0000] [1223] [DEBUG] GET /
+[2024-07-01 19:14:34 +0000] [1223] [DEBUG] POST /
+[2024-07-01 19:14:34 +0000] [1223] [DEBUG] POST /
+[2024-07-01 19:14:34 +0000] [1223] [DEBUG] GET /WuEL
+[2024-07-01 19:14:35 +0000] [1223] [DEBUG] GET /a
+[2024-07-01 19:14:35 +0000] [1223] [DEBUG] GET /download/file.ext
+[2024-07-01 19:14:35 +0000] [1223] [DEBUG] GET /SiteLoader
+[2024-07-01 19:14:35 +0000] [1223] [DEBUG] GET /mPlayer
+[2024-07-01 19:16:45 +0000] [1223] [DEBUG] GET /
+[2024-07-01 20:01:52 +0000] [1223] [DEBUG] GET /
+[2024-07-01 20:01:52 +0000] [1223] [DEBUG] GET /form.html
+[2024-07-01 20:01:53 +0000] [1223] [DEBUG] GET /upl.php
+[2024-07-01 20:01:54 +0000] [1223] [DEBUG] GET /geoip/
+[2024-07-01 20:01:54 +0000] [1223] [DEBUG] GET /favicon.ico
+[2024-07-01 20:01:55 +0000] [1223] [DEBUG] GET /1.php
+[2024-07-01 20:01:55 +0000] [1223] [DEBUG] GET /bundle.js
+[2024-07-01 20:01:56 +0000] [1223] [DEBUG] GET /files/
+[2024-07-01 20:01:56 +0000] [1223] [DEBUG] GET /systembc/password.php
+[2024-07-01 20:01:57 +0000] [1223] [DEBUG] GET /password.php
+[2024-07-01 20:01:57 +0000] [1223] [DEBUG] GET /info.php
+[2024-07-01 20:04:25 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 20:04:25 +0000] [1223] [DEBUG] POST /
+[2024-07-01 20:19:36 +0000] [1223] [DEBUG] GET /
+[2024-07-01 20:26:24 +0000] [1223] [DEBUG] GET /
+[2024-07-01 20:39:18 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 20:39:18 +0000] [1223] [DEBUG] POST /
+[2024-07-01 21:32:47 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 21:58:30 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 21:58:30 +0000] [1223] [DEBUG] POST /
+[2024-07-01 22:07:13 +0000] [1223] [DEBUG] GET /
+[2024-07-01 22:23:15 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 22:39:58 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 22:39:58 +0000] [1223] [DEBUG] POST /
+[2024-07-01 23:22:06 +0000] [1223] [DEBUG] GET /
+[2024-07-01 23:41:30 +0000] [1223] [DEBUG] GET /_profiler/phpinfo
+[2024-07-01 23:42:54 +0000] [1223] [DEBUG] GET /.env
+[2024-07-01 23:42:55 +0000] [1223] [DEBUG] POST /
+[2024-07-02 00:00:52 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 00:00:52 +0000] [1223] [DEBUG] POST /
+[2024-07-02 00:27:53 +0000] [1223] [DEBUG] GET /.git/config
+[2024-07-02 00:32:35 +0000] [1223] [DEBUG] GET /
+[2024-07-02 01:56:57 +0000] [1223] [DEBUG] GET /
+[2024-07-02 02:13:06 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 02:13:07 +0000] [1223] [DEBUG] POST /
+[2024-07-02 03:00:40 +0000] [1223] [DEBUG] GET /
+[2024-07-02 03:00:44 +0000] [1223] [DEBUG] GET /favicon.ico
+[2024-07-02 03:22:15 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 03:22:16 +0000] [1223] [DEBUG] POST /
+[2024-07-02 04:01:02 +0000] [1223] [DEBUG] GET /
+[2024-07-02 04:25:38 +0000] [1223] [DEBUG] GET /manager/html
+[2024-07-02 05:35:03 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 05:35:03 +0000] [1223] [DEBUG] POST /
+[2024-07-02 05:35:13 +0000] [1223] [DEBUG] GET /
+[2024-07-02 05:35:14 +0000] [1223] [DEBUG] GET /config/php.ini
+[2024-07-02 05:35:14 +0000] [1223] [DEBUG] GET /admin/config
+[2024-07-02 05:35:15 +0000] [1223] [DEBUG] GET /index.html
+[2024-07-02 05:35:15 +0000] [1223] [DEBUG] GET /phpinfo.php
+[2024-07-02 05:35:16 +0000] [1223] [DEBUG] GET /test.php
+[2024-07-02 05:35:16 +0000] [1223] [DEBUG] GET /config.properties
+[2024-07-02 05:35:16 +0000] [1223] [DEBUG] GET /config
+[2024-07-02 05:35:17 +0000] [1223] [DEBUG] GET /main.js
+[2024-07-02 05:35:17 +0000] [1223] [DEBUG] GET /phpinfo
+[2024-07-02 05:35:18 +0000] [1223] [DEBUG] GET /test
+[2024-07-02 05:35:18 +0000] [1223] [DEBUG] GET /.aws/credentials
+[2024-07-02 05:35:19 +0000] [1223] [DEBUG] GET /app_dev.php/_profiler/phpinfo
+[2024-07-02 05:35:19 +0000] [1223] [DEBUG] GET /app/etc/env.php
+[2024-07-02 05:35:20 +0000] [1223] [DEBUG] GET /index.php
+[2024-07-02 05:35:20 +0000] [1223] [DEBUG] GET /config/constants.js
+[2024-07-02 05:35:20 +0000] [1223] [DEBUG] GET /secured/phpinfo.php
+[2024-07-02 05:35:21 +0000] [1223] [DEBUG] GET /application.properties
+[2024-07-02 05:35:21 +0000] [1223] [DEBUG] GET /config.ini
+[2024-07-02 05:35:22 +0000] [1223] [DEBUG] GET /config/config.php
+[2024-07-02 05:35:22 +0000] [1223] [DEBUG] GET /index.php/phpinfo
+[2024-07-02 05:35:23 +0000] [1223] [DEBUG] GET /.profile
+[2024-07-02 05:35:23 +0000] [1223] [DEBUG] GET /appsettings.json
+[2024-07-02 05:35:24 +0000] [1223] [DEBUG] GET /config/index.js
+[2024-07-02 05:35:24 +0000] [1223] [DEBUG] GET /public/js/main.js
+[2024-07-02 05:35:25 +0000] [1223] [DEBUG] GET /info.php
+[2024-07-02 05:35:25 +0000] [1223] [DEBUG] GET /config/config.js
+[2024-07-02 05:35:26 +0000] [1223] [DEBUG] GET /config.js
+[2024-07-02 05:35:26 +0000] [1223] [DEBUG] GET /gulpfile.js
+[2024-07-02 05:35:26 +0000] [1223] [DEBUG] GET /application-dev.properties
+[2024-07-02 05:35:27 +0000] [1223] [DEBUG] GET /config/default.json
+[2024-07-02 05:35:27 +0000] [1223] [DEBUG] GET /README.md
+[2024-07-02 05:35:28 +0000] [1223] [DEBUG] GET /info
+[2024-07-02 05:35:28 +0000] [1223] [DEBUG] GET /app.js
+[2024-07-02 05:35:29 +0000] [1223] [DEBUG] GET /env.json
+[2024-07-02 05:35:29 +0000] [1223] [DEBUG] GET /config/config.ini
+[2024-07-02 05:35:30 +0000] [1223] [DEBUG] GET /config/environments/production.rb
+[2024-07-02 05:35:30 +0000] [1223] [DEBUG] GET /environment.ts
+[2024-07-02 05:35:31 +0000] [1223] [DEBUG] GET /resources/application.conf
+[2024-07-02 05:35:31 +0000] [1223] [DEBUG] GET /config/aws.json
+[2024-07-02 05:35:32 +0000] [1223] [DEBUG] GET /app.py
+[2024-07-02 05:35:32 +0000] [1223] [DEBUG] GET /application/config/constants.php/
+[2024-07-02 05:35:32 +0000] [1223] [DEBUG] GET /debug/default
+[2024-07-02 05:35:33 +0000] [1223] [DEBUG] GET /src/config.js
+[2024-07-02 05:35:33 +0000] [1223] [DEBUG] GET /config/application.yml
+[2024-07-02 05:35:34 +0000] [1223] [DEBUG] GET /config/services.yaml
+[2024-07-02 05:35:34 +0000] [1223] [DEBUG] GET /dev/phpinfo.php
+[2024-07-02 05:35:35 +0000] [1223] [DEBUG] GET /api/config/tsconfig.json
+[2024-07-02 05:35:35 +0000] [1223] [DEBUG] GET /static/.gitlab-ci.yml
+[2024-07-02 05:35:36 +0000] [1223] [DEBUG] GET /php_info.php
+[2024-07-02 05:35:36 +0000] [1223] [DEBUG] GET /server.js
+[2024-07-02 05:35:37 +0000] [1223] [DEBUG] GET /config/development.json
+[2024-07-02 05:35:42 +0000] [1223] [DEBUG] GET /
+[2024-07-02 05:35:43 +0000] [1223] [DEBUG] POST /
+[2024-07-02 06:32:10 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 06:32:10 +0000] [1223] [DEBUG] POST /
+[2024-07-02 07:16:08 +0000] [1223] [DEBUG] GET /
+[2024-07-02 08:17:22 +0000] [1223] [DEBUG] GET /_profiler/phpinfo
+[2024-07-02 08:17:23 +0000] [1223] [DEBUG] GET /appsettings.json
+[2024-07-02 08:17:23 +0000] [1223] [DEBUG] GET /test.php
+[2024-07-02 08:17:23 +0000] [1223] [DEBUG] GET /server.js
+[2024-07-02 08:17:24 +0000] [1223] [DEBUG] GET /phpinfo
+[2024-07-02 08:17:24 +0000] [1223] [DEBUG] GET /index.html
+[2024-07-02 08:17:27 +0000] [1223] [DEBUG] GET /.aws/credentials
+[2024-07-02 08:17:27 +0000] [1223] [DEBUG] GET /app.js
+[2024-07-02 08:17:27 +0000] [1223] [DEBUG] GET /index.php
+[2024-07-02 08:17:27 +0000] [1223] [DEBUG] GET /actuator/env
+[2024-07-02 08:17:28 +0000] [1223] [DEBUG] GET /info
+[2024-07-02 08:32:56 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 08:32:56 +0000] [1223] [DEBUG] POST /
+[2024-07-02 08:35:14 +0000] [1223] [DEBUG] GET /actuator/health
+[2024-07-02 09:24:50 +0000] [1223] [DEBUG] GET /
+[2024-07-02 09:24:58 +0000] [1223] [DEBUG] GET /
+[2024-07-02 09:53:59 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 09:53:59 +0000] [1223] [DEBUG] POST /
+[2024-07-02 09:56:36 +0000] [1223] [DEBUG] GET /
+[2024-07-02 09:57:58 +0000] [1223] [DEBUG] GET /
+[2024-07-02 09:58:07 +0000] [1223] [DEBUG] GET /
+[2024-07-02 09:58:07 +0000] [1223] [DEBUG] GET /favicon.ico
+[2024-07-02 09:59:14 +0000] [1223] [DEBUG] GET /.git/config
+[2024-07-02 10:09:10 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 10:09:11 +0000] [1223] [DEBUG] POST /
+[2024-07-02 10:48:03 +0000] [1223] [DEBUG] GET /.git/config
+[2024-07-02 10:50:45 +0000] [1223] [DEBUG] GET /_profiler/phpinfo
+[2024-07-02 11:30:35 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 11:30:35 +0000] [1223] [DEBUG] POST /
+[2024-07-02 12:20:46 +0000] [1223] [DEBUG] GET /
+[2024-07-02 12:20:57 +0000] [1223] [DEBUG] GET /
+[2024-07-02 12:50:59 +0000] [1223] [DEBUG] GET /favicon.ico
+[2024-07-02 14:16:15 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 14:16:16 +0000] [1223] [DEBUG] POST /
+[2024-07-02 16:26:23 +0000] [1223] [DEBUG] GET /
+[2024-07-02 16:31:26 +0000] [1223] [DEBUG] GET /
+[2024-07-02 17:05:11 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 17:08:52 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 17:08:54 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 17:11:13 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 17:13:22 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 17:13:24 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 17:39:07 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 17:39:08 +0000] [1223] [DEBUG] POST /
+[2024-07-02 17:55:11 +0000] [1223] [DEBUG] GET /
+[2024-07-02 17:55:11 +0000] [1223] [DEBUG] GET /favicon.ico
+[2024-07-02 18:10:00 +0000] [1223] [DEBUG] GET /
+[2024-07-02 18:23:01 +0000] [1223] [DEBUG] GET /.env
+[2024-07-02 18:23:01 +0000] [1223] [DEBUG] POST /
+[2024-07-02 18:36:43 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 18:37:20 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 18:37:25 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 18:37:25 +0000] [1223] [DEBUG] POST /slack/events
+[2024-07-02 18:40:53 +0000] [1222] [CRITICAL] WORKER TIMEOUT (pid:1223)
+[2024-07-02 19:04:35 +0000] [891] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fdbeda0b0a0>
+  on_reload: <function OnReload.on_reload at 0x7fdbeda0b1c0>
+  when_ready: <function WhenReady.when_ready at 0x7fdbeda0b2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7fdbeda0b400>
+  post_fork: <function Postfork.post_fork at 0x7fdbeda0b520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fdbeda0b640>
+  worker_int: <function WorkerInt.worker_int at 0x7fdbeda0b760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fdbeda0b880>
+  pre_exec: <function PreExec.pre_exec at 0x7fdbeda0b9a0>
+  pre_request: <function PreRequest.pre_request at 0x7fdbeda0bac0>
+  post_request: <function PostRequest.post_request at 0x7fdbeda0bb50>
+  child_exit: <function ChildExit.child_exit at 0x7fdbeda0bc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fdbeda0bd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fdbeda0beb0>
+  on_exit: <function OnExit.on_exit at 0x7fdbeda30040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fdbeda30160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-07-02 19:04:35 +0000] [891] [INFO] Starting gunicorn 22.0.0
+[2024-07-02 19:04:35 +0000] [891] [DEBUG] Arbiter booted
+[2024-07-02 19:04:35 +0000] [891] [INFO] Listening at: http://0.0.0.0:8000 (891)
+[2024-07-02 19:04:35 +0000] [891] [INFO] Using worker: sync
+[2024-07-02 19:04:35 +0000] [892] [INFO] Booting worker with pid: 892
+[2024-07-02 19:04:35 +0000] [891] [DEBUG] 1 workers
+[2024-07-02 19:04:40 +0000] [892] [DEBUG] POST /slack/events
+[2024-07-02 19:04:40 +0000] [892] [DEBUG] POST /slack/events
+[2024-07-02 19:04:40 +0000] [892] [DEBUG] POST /slack/events
+[2024-07-02 19:04:49 +0000] [891] [ERROR] Worker (pid:892) was sent SIGKILL! Perhaps out of memory?
+[2024-07-02 19:04:49 +0000] [902] [INFO] Booting worker with pid: 902
+[2024-07-02 19:04:49 +0000] [891] [INFO] Handling signal: term
+[2024-07-02 19:04:53 +0000] [902] [INFO] Worker exiting (pid: 902)
+[2024-07-02 19:04:53 +0000] [891] [INFO] Shutting down: Master
+[2024-07-02 19:04:53 +0000] [903] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7c672332b0a0>
+  on_reload: <function OnReload.on_reload at 0x7c672332b1c0>
+  when_ready: <function WhenReady.when_ready at 0x7c672332b2e0>
+  pre_fork: <function Prefork.pre_fork at 0x7c672332b400>
+  post_fork: <function Postfork.post_fork at 0x7c672332b520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7c672332b640>
+  worker_int: <function WorkerInt.worker_int at 0x7c672332b760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7c672332b880>
+  pre_exec: <function PreExec.pre_exec at 0x7c672332b9a0>
+  pre_request: <function PreRequest.pre_request at 0x7c672332bac0>
+  post_request: <function PostRequest.post_request at 0x7c672332bb50>
+  child_exit: <function ChildExit.child_exit at 0x7c672332bc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x7c672332bd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7c672332beb0>
+  on_exit: <function OnExit.on_exit at 0x7c6723350040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7c6723350160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-07-02 19:04:53 +0000] [903] [INFO] Starting gunicorn 22.0.0
+[2024-07-02 19:04:53 +0000] [903] [DEBUG] Arbiter booted
+[2024-07-02 19:04:53 +0000] [903] [INFO] Listening at: http://0.0.0.0:8000 (903)
+[2024-07-02 19:04:53 +0000] [903] [INFO] Using worker: sync
+[2024-07-02 19:04:53 +0000] [904] [INFO] Booting worker with pid: 904
+[2024-07-02 19:04:53 +0000] [903] [DEBUG] 1 workers
+[2024-07-02 19:05:13 +0000] [904] [DEBUG] POST /slack/events
+[2024-07-02 19:05:13 +0000] [904] [DEBUG] POST /slack/events
+[2024-07-02 19:05:13 +0000] [904] [DEBUG] POST /slack/events
+[2024-07-02 19:05:23 +0000] [903] [ERROR] Worker (pid:904) was sent SIGKILL! Perhaps out of memory?
+[2024-07-02 19:05:23 +0000] [910] [INFO] Booting worker with pid: 910
+[2024-07-02 19:10:03 +0000] [903] [INFO] Handling signal: term
+[2024-07-02 19:10:03 +0000] [910] [INFO] Worker exiting (pid: 910)
+[2024-07-02 19:10:03 +0000] [903] [ERROR] Worker (pid:910) was sent SIGTERM!
+[2024-07-02 19:10:03 +0000] [903] [INFO] Shutting down: Master
+[2024-07-02 19:10:04 +0000] [974] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x74055e1c30a0>
+  on_reload: <function OnReload.on_reload at 0x74055e1c31c0>
+  when_ready: <function WhenReady.when_ready at 0x74055e1c32e0>
+  pre_fork: <function Prefork.pre_fork at 0x74055e1c3400>
+  post_fork: <function Postfork.post_fork at 0x74055e1c3520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x74055e1c3640>
+  worker_int: <function WorkerInt.worker_int at 0x74055e1c3760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x74055e1c3880>
+  pre_exec: <function PreExec.pre_exec at 0x74055e1c39a0>
+  pre_request: <function PreRequest.pre_request at 0x74055e1c3ac0>
+  post_request: <function PostRequest.post_request at 0x74055e1c3b50>
+  child_exit: <function ChildExit.child_exit at 0x74055e1c3c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x74055e1c3d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x74055e1c3eb0>
+  on_exit: <function OnExit.on_exit at 0x74055e1e8040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x74055e1e8160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-07-02 19:10:04 +0000] [974] [INFO] Starting gunicorn 22.0.0
+[2024-07-02 19:10:04 +0000] [974] [DEBUG] Arbiter booted
+[2024-07-02 19:10:04 +0000] [974] [INFO] Listening at: http://0.0.0.0:8000 (974)
+[2024-07-02 19:10:04 +0000] [974] [INFO] Using worker: sync
+[2024-07-02 19:10:04 +0000] [976] [INFO] Booting worker with pid: 976
+[2024-07-02 19:10:04 +0000] [974] [DEBUG] 1 workers
+[2024-07-02 19:11:26 +0000] [976] [DEBUG] GET /
+[2024-07-02 19:13:41 +0000] [976] [DEBUG] POST /slack/events
+[2024-07-02 19:13:42 +0000] [976] [DEBUG] POST /slack/events
+[2024-07-02 19:13:42 +0000] [976] [DEBUG] POST /slack/events
+[2024-07-02 19:13:49 +0000] [976] [DEBUG] GET /
+[2024-07-02 19:13:51 +0000] [974] [ERROR] Worker (pid:976) was sent SIGKILL! Perhaps out of memory?
+[2024-07-02 19:13:51 +0000] [995] [INFO] Booting worker with pid: 995
+[2024-07-02 19:15:32 +0000] [995] [DEBUG] GET /js/NewWindow_2_all.js
+[2024-07-02 19:18:53 +0000] [995] [INFO] Worker exiting (pid: 995)
+[2024-07-02 19:18:53 +0000] [974] [INFO] Handling signal: term
+[2024-07-02 19:18:53 +0000] [974] [ERROR] Worker (pid:995) was sent SIGTERM!
+[2024-07-02 19:18:53 +0000] [974] [INFO] Shutting down: Master
+[2024-07-02 19:31:20 +0000] [1036] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x78007a3bf0a0>
+  on_reload: <function OnReload.on_reload at 0x78007a3bf1c0>
+  when_ready: <function WhenReady.when_ready at 0x78007a3bf2e0>
+  pre_fork: <function Prefork.pre_fork at 0x78007a3bf400>
+  post_fork: <function Postfork.post_fork at 0x78007a3bf520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x78007a3bf640>
+  worker_int: <function WorkerInt.worker_int at 0x78007a3bf760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x78007a3bf880>
+  pre_exec: <function PreExec.pre_exec at 0x78007a3bf9a0>
+  pre_request: <function PreRequest.pre_request at 0x78007a3bfac0>
+  post_request: <function PostRequest.post_request at 0x78007a3bfb50>
+  child_exit: <function ChildExit.child_exit at 0x78007a3bfc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x78007a3bfd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x78007a3bfeb0>
+  on_exit: <function OnExit.on_exit at 0x78007a3e4040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x78007a3e4160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-07-02 19:31:20 +0000] [1036] [INFO] Starting gunicorn 22.0.0
+[2024-07-02 19:31:20 +0000] [1036] [DEBUG] Arbiter booted
+[2024-07-02 19:31:20 +0000] [1036] [INFO] Listening at: http://0.0.0.0:8000 (1036)
+[2024-07-02 19:31:20 +0000] [1036] [INFO] Using worker: sync
+[2024-07-02 19:31:20 +0000] [1037] [INFO] Booting worker with pid: 1037
+[2024-07-02 19:31:20 +0000] [1036] [DEBUG] 1 workers
+[2024-07-02 19:32:13 +0000] [1037] [DEBUG] GET /
+[2024-07-02 19:37:54 +0000] [1037] [DEBUG] GET /
+[2024-07-02 20:06:09 +0000] [1037] [DEBUG] GET /
+[2024-07-02 20:07:47 +0000] [1037] [DEBUG] GET /
+[2024-07-02 20:08:08 +0000] [1037] [DEBUG] GET /
+[2024-07-02 20:10:23 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:11:22 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:11:22 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:11:22 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:11:50 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:11:50 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:11:56 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:11:56 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:12:18 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:12:33 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:12:33 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:12:42 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:12:42 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:12:42 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:12:44 +0000] [1037] [DEBUG] GET /
+[2024-07-02 20:12:45 +0000] [1037] [DEBUG] GET /
+[2024-07-02 20:13:21 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:13:22 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:13:26 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:13:34 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:13:42 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:13:58 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:21:41 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:22:10 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:27:01 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 20:27:14 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-02 22:03:38 +0000] [1037] [DEBUG] GET /
+[2024-07-02 22:04:28 +0000] [1037] [DEBUG] GET /
+[2024-07-02 23:24:34 +0000] [1037] [DEBUG] GET /
+[2024-07-03 01:05:06 +0000] [1037] [DEBUG] GET /
+[2024-07-03 01:06:00 +0000] [1037] [DEBUG] GET /favicon.ico
+[2024-07-03 02:04:44 +0000] [1037] [DEBUG] GET /
+[2024-07-03 02:06:30 +0000] [1037] [DEBUG] GET /
+[2024-07-03 02:10:16 +0000] [1037] [DEBUG] GET /
+[2024-07-03 04:05:31 +0000] [1037] [DEBUG] GET /
+[2024-07-03 04:05:32 +0000] [1037] [DEBUG] GET /wp-content/plugins/wp-video-lightbox/readme.txt
+[2024-07-03 04:16:31 +0000] [1037] [DEBUG] GET /
+[2024-07-03 04:16:33 +0000] [1037] [DEBUG] GET /robots.txt
+[2024-07-03 04:16:33 +0000] [1037] [DEBUG] GET /sitemap.xml
+[2024-07-03 04:16:34 +0000] [1037] [DEBUG] GET /.well-known/security.txt
+[2024-07-03 04:16:34 +0000] [1037] [DEBUG] GET /favicon.ico
+[2024-07-03 04:32:14 +0000] [1037] [DEBUG] GET /
+[2024-07-03 05:06:18 +0000] [1037] [DEBUG] GET /
+[2024-07-03 05:18:11 +0000] [1037] [DEBUG] GET /
+[2024-07-03 05:48:37 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 05:48:37 +0000] [1037] [DEBUG] POST /
+[2024-07-03 05:59:30 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 05:59:30 +0000] [1037] [DEBUG] POST /
+[2024-07-03 06:40:45 +0000] [1037] [DEBUG] GET /
+[2024-07-03 06:54:20 +0000] [1037] [DEBUG] GET /
+[2024-07-03 07:28:45 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 07:28:46 +0000] [1037] [DEBUG] POST /
+[2024-07-03 07:54:20 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 07:54:20 +0000] [1037] [DEBUG] POST /
+[2024-07-03 08:33:06 +0000] [1037] [DEBUG] GET /
+[2024-07-03 08:36:41 +0000] [1037] [DEBUG] GET /
+[2024-07-03 09:28:26 +0000] [1037] [DEBUG] GET /
+[2024-07-03 09:28:28 +0000] [1037] [DEBUG] GET /
+[2024-07-03 09:32:40 +0000] [1037] [DEBUG] HEAD /
+[2024-07-03 10:09:56 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 10:09:56 +0000] [1037] [DEBUG] POST /
+[2024-07-03 10:38:16 +0000] [1037] [DEBUG] GET /
+[2024-07-03 11:04:52 +0000] [1037] [DEBUG] GET /
+[2024-07-03 11:08:58 +0000] [1037] [DEBUG] GET /
+[2024-07-03 11:08:59 +0000] [1037] [DEBUG] GET /
+[2024-07-03 11:53:43 +0000] [1037] [DEBUG] GET /
+[2024-07-03 11:53:43 +0000] [1037] [DEBUG] GET /form.html
+[2024-07-03 11:53:43 +0000] [1037] [DEBUG] GET /upl.php
+[2024-07-03 11:53:43 +0000] [1037] [DEBUG] GET /geoip/
+[2024-07-03 11:53:43 +0000] [1037] [DEBUG] GET /favicon.ico
+[2024-07-03 11:53:43 +0000] [1037] [DEBUG] GET /1.php
+[2024-07-03 11:53:43 +0000] [1037] [DEBUG] GET /bundle.js
+[2024-07-03 11:53:43 +0000] [1037] [DEBUG] GET /files/
+[2024-07-03 11:53:44 +0000] [1037] [DEBUG] GET /systembc/password.php
+[2024-07-03 11:53:44 +0000] [1037] [DEBUG] GET /password.php
+[2024-07-03 11:53:44 +0000] [1037] [DEBUG] GET /info.php
+[2024-07-03 12:04:42 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 12:04:42 +0000] [1037] [DEBUG] POST /
+[2024-07-03 12:45:35 +0000] [1037] [DEBUG] GET /
+[2024-07-03 12:45:36 +0000] [1037] [DEBUG] GET /robots.txt
+[2024-07-03 12:45:36 +0000] [1037] [DEBUG] GET /sitemap.xml
+[2024-07-03 12:45:37 +0000] [1037] [DEBUG] GET /.well-known/security.txt
+[2024-07-03 12:45:38 +0000] [1037] [DEBUG] GET /favicon.ico
+[2024-07-03 12:55:35 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 12:55:35 +0000] [1037] [DEBUG] POST /
+[2024-07-03 13:36:32 +0000] [1037] [DEBUG] GET /.git/config
+[2024-07-03 14:29:18 +0000] [1037] [DEBUG] GET /
+[2024-07-03 14:29:18 +0000] [1037] [DEBUG] GET /robots.txt
+[2024-07-03 14:29:18 +0000] [1037] [DEBUG] GET /sitemap.xml
+[2024-07-03 14:29:19 +0000] [1037] [DEBUG] GET /.well-known/security.txt
+[2024-07-03 14:29:20 +0000] [1037] [DEBUG] GET /favicon.ico
+[2024-07-03 14:47:01 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 14:47:02 +0000] [1037] [DEBUG] POST /
+[2024-07-03 14:57:51 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 14:57:52 +0000] [1037] [DEBUG] POST /
+[2024-07-03 14:57:52 +0000] [1037] [DEBUG] GET /sendgrid/.env
+[2024-07-03 14:57:53 +0000] [1037] [DEBUG] POST /
+[2024-07-03 15:06:26 +0000] [1037] [DEBUG] GET /
+[2024-07-03 15:23:16 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-03 15:56:11 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-03 15:56:22 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-03 16:26:48 +0000] [1037] [DEBUG] GET /
+[2024-07-03 16:26:48 +0000] [1037] [DEBUG] GET /robots.txt
+[2024-07-03 16:26:49 +0000] [1037] [DEBUG] GET /sitemap.xml
+[2024-07-03 16:26:49 +0000] [1037] [DEBUG] GET /.well-known/security.txt
+[2024-07-03 16:26:52 +0000] [1037] [DEBUG] GET /favicon.ico
+[2024-07-03 16:30:29 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 16:30:30 +0000] [1037] [DEBUG] POST /
+[2024-07-03 16:43:20 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 16:43:20 +0000] [1037] [DEBUG] POST /
+[2024-07-03 16:52:00 +0000] [1037] [DEBUG] GET /.env
+[2024-07-03 16:52:00 +0000] [1037] [DEBUG] POST /
+[2024-07-03 16:59:53 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-03 16:59:53 +0000] [1037] [DEBUG] POST /slack/events
+[2024-07-03 17:01:27 +0000] [1036] [ERROR] Worker (pid:1037) was sent SIGKILL! Perhaps out of memory?
+[2024-07-03 17:01:27 +0000] [1036] [INFO] Handling signal: term
+[2024-07-03 17:01:27 +0000] [1036] [INFO] Shutting down: Master
+[2024-07-03 17:01:28 +0000] [8407] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x718c1234b0a0>
+  on_reload: <function OnReload.on_reload at 0x718c1234b1c0>
+  when_ready: <function WhenReady.when_ready at 0x718c1234b2e0>
+  pre_fork: <function Prefork.pre_fork at 0x718c1234b400>
+  post_fork: <function Postfork.post_fork at 0x718c1234b520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x718c1234b640>
+  worker_int: <function WorkerInt.worker_int at 0x718c1234b760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x718c1234b880>
+  pre_exec: <function PreExec.pre_exec at 0x718c1234b9a0>
+  pre_request: <function PreRequest.pre_request at 0x718c1234bac0>
+  post_request: <function PostRequest.post_request at 0x718c1234bb50>
+  child_exit: <function ChildExit.child_exit at 0x718c1234bc70>
+  worker_exit: <function WorkerExit.worker_exit at 0x718c1234bd90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x718c1234beb0>
+  on_exit: <function OnExit.on_exit at 0x718c12370040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x718c12370160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-07-03 17:01:28 +0000] [8407] [INFO] Starting gunicorn 22.0.0
+[2024-07-03 17:01:28 +0000] [8407] [DEBUG] Arbiter booted
+[2024-07-03 17:01:28 +0000] [8407] [INFO] Listening at: http://0.0.0.0:8000 (8407)
+[2024-07-03 17:01:28 +0000] [8407] [INFO] Using worker: sync
+[2024-07-03 17:01:28 +0000] [8408] [INFO] Booting worker with pid: 8408
+[2024-07-03 17:01:28 +0000] [8407] [DEBUG] 1 workers
+[2024-07-03 17:09:44 +0000] [8408] [DEBUG] POST /slack/events
+[2024-07-03 17:09:45 +0000] [8408] [DEBUG] POST /slack/events
+[2024-07-03 17:10:12 +0000] [8408] [DEBUG] POST /slack/events
+[2024-07-03 17:10:12 +0000] [8408] [DEBUG] POST /slack/events
+[2024-07-03 17:10:12 +0000] [8408] [DEBUG] POST /slack/events
+[2024-07-03 17:12:13 +0000] [8407] [CRITICAL] WORKER TIMEOUT (pid:8408)
+[2024-07-03 17:12:15 +0000] [8407] [ERROR] Worker (pid:8408) was sent SIGKILL! Perhaps out of memory?
+[2024-07-03 17:12:15 +0000] [8512] [INFO] Booting worker with pid: 8512
+[2024-07-03 17:15:18 +0000] [8512] [DEBUG] POST /slack/events
+[2024-07-03 17:15:18 +0000] [8512] [DEBUG] POST /slack/events
+[2024-07-03 17:15:19 +0000] [8512] [DEBUG] POST /slack/events
+[2024-07-03 17:16:36 +0000] [8512] [DEBUG] GET /
+[2024-07-03 17:17:31 +0000] [8407] [ERROR] Worker (pid:8512) was sent SIGKILL! Perhaps out of memory?
+[2024-07-03 17:17:32 +0000] [8550] [INFO] Booting worker with pid: 8550
+[2024-07-03 17:25:17 +0000] [8550] [INFO] Worker exiting (pid: 8550)
+[2024-07-03 17:25:17 +0000] [8649] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ubuntu/nido-bot/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x70bd4d4470a0>
+  on_reload: <function OnReload.on_reload at 0x70bd4d4471c0>
+  when_ready: <function WhenReady.when_ready at 0x70bd4d4472e0>
+  pre_fork: <function Prefork.pre_fork at 0x70bd4d447400>
+  post_fork: <function Postfork.post_fork at 0x70bd4d447520>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x70bd4d447640>
+  worker_int: <function WorkerInt.worker_int at 0x70bd4d447760>
+  worker_abort: <function WorkerAbort.worker_abort at 0x70bd4d447880>
+  pre_exec: <function PreExec.pre_exec at 0x70bd4d4479a0>
+  pre_request: <function PreRequest.pre_request at 0x70bd4d447ac0>
+  post_request: <function PostRequest.post_request at 0x70bd4d447b50>
+  child_exit: <function ChildExit.child_exit at 0x70bd4d447c70>
+  worker_exit: <function WorkerExit.worker_exit at 0x70bd4d447d90>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x70bd4d447eb0>
+  on_exit: <function OnExit.on_exit at 0x70bd4d46c040>
+  ssl_context: <function NewSSLContext.ssl_context at 0x70bd4d46c160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-07-03 17:25:17 +0000] [8649] [INFO] Starting gunicorn 22.0.0
+[2024-07-03 17:25:17 +0000] [8649] [DEBUG] Arbiter booted
+[2024-07-03 17:25:17 +0000] [8649] [INFO] Listening at: http://0.0.0.0:8000 (8649)
+[2024-07-03 17:25:17 +0000] [8649] [INFO] Using worker: sync
+[2024-07-03 17:25:17 +0000] [8650] [INFO] Booting worker with pid: 8650
+[2024-07-03 17:25:17 +0000] [8649] [DEBUG] 1 workers
+[2024-07-03 17:31:05 +0000] [8649] [INFO] Handling signal: term
+[2024-07-03 17:31:05 +0000] [8650] [INFO] Worker exiting (pid: 8650)
+[2024-07-03 17:31:05 +0000] [8649] [ERROR] Worker (pid:8650) was sent SIGTERM!
+[2024-07-03 17:31:05 +0000] [8649] [INFO] Shutting down: Master

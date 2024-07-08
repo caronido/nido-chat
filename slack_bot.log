@@ -1,0 +1,756 @@
+[2024-06-30 21:54:03 +0000] [1053] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: slack_bot.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7eabaf0475b0>
+  on_reload: <function OnReload.on_reload at 0x7eabaf0476d0>
+  when_ready: <function WhenReady.when_ready at 0x7eabaf0477f0>
+  pre_fork: <function Prefork.pre_fork at 0x7eabaf047910>
+  post_fork: <function Postfork.post_fork at 0x7eabaf047a30>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7eabaf047b50>
+  worker_int: <function WorkerInt.worker_int at 0x7eabaf047c70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7eabaf047d90>
+  pre_exec: <function PreExec.pre_exec at 0x7eabaf047eb0>
+  pre_request: <function PreRequest.pre_request at 0x7eabaf068040>
+  post_request: <function PostRequest.post_request at 0x7eabaf0680d0>
+  child_exit: <function ChildExit.child_exit at 0x7eabaf0681f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7eabaf068310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7eabaf068430>
+  on_exit: <function OnExit.on_exit at 0x7eabaf068550>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7eabaf068670>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 21:54:03 +0000] [1053] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 21:54:03 +0000] [1053] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:54:03 +0000] [1053] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:54:03 +0000] [1053] [ERROR] Retrying in 1 second.
+[2024-06-30 21:54:04 +0000] [1053] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:54:04 +0000] [1053] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:54:04 +0000] [1053] [ERROR] Retrying in 1 second.
+[2024-06-30 21:54:05 +0000] [1053] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:54:05 +0000] [1053] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:54:05 +0000] [1053] [ERROR] Retrying in 1 second.
+[2024-06-30 21:54:06 +0000] [1053] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:54:06 +0000] [1053] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:54:06 +0000] [1053] [ERROR] Retrying in 1 second.
+[2024-06-30 21:54:07 +0000] [1053] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:54:07 +0000] [1053] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:54:07 +0000] [1053] [ERROR] Retrying in 1 second.
+[2024-06-30 21:54:08 +0000] [1053] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-30 21:57:59 +0000] [1106] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: slack_bot.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x77fc272475b0>
+  on_reload: <function OnReload.on_reload at 0x77fc272476d0>
+  when_ready: <function WhenReady.when_ready at 0x77fc272477f0>
+  pre_fork: <function Prefork.pre_fork at 0x77fc27247910>
+  post_fork: <function Postfork.post_fork at 0x77fc27247a30>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x77fc27247b50>
+  worker_int: <function WorkerInt.worker_int at 0x77fc27247c70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x77fc27247d90>
+  pre_exec: <function PreExec.pre_exec at 0x77fc27247eb0>
+  pre_request: <function PreRequest.pre_request at 0x77fc27268040>
+  post_request: <function PostRequest.post_request at 0x77fc272680d0>
+  child_exit: <function ChildExit.child_exit at 0x77fc272681f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x77fc27268310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x77fc27268430>
+  on_exit: <function OnExit.on_exit at 0x77fc27268550>
+  ssl_context: <function NewSSLContext.ssl_context at 0x77fc27268670>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 21:57:59 +0000] [1106] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 21:57:59 +0000] [1106] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:57:59 +0000] [1106] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:57:59 +0000] [1106] [ERROR] Retrying in 1 second.
+[2024-06-30 21:58:00 +0000] [1106] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:58:00 +0000] [1106] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:58:00 +0000] [1106] [ERROR] Retrying in 1 second.
+[2024-06-30 21:58:01 +0000] [1106] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:58:01 +0000] [1106] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:58:01 +0000] [1106] [ERROR] Retrying in 1 second.
+[2024-06-30 21:58:02 +0000] [1106] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:58:02 +0000] [1106] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:58:02 +0000] [1106] [ERROR] Retrying in 1 second.
+[2024-06-30 21:58:03 +0000] [1106] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2024-06-30 21:58:03 +0000] [1106] [DEBUG] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2024-06-30 21:58:03 +0000] [1106] [ERROR] Retrying in 1 second.
+[2024-06-30 21:58:04 +0000] [1106] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2024-06-30 22:01:10 +0000] [1175] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: slack_bot.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x78e6d4eb35b0>
+  on_reload: <function OnReload.on_reload at 0x78e6d4eb36d0>
+  when_ready: <function WhenReady.when_ready at 0x78e6d4eb37f0>
+  pre_fork: <function Prefork.pre_fork at 0x78e6d4eb3910>
+  post_fork: <function Postfork.post_fork at 0x78e6d4eb3a30>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x78e6d4eb3b50>
+  worker_int: <function WorkerInt.worker_int at 0x78e6d4eb3c70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x78e6d4eb3d90>
+  pre_exec: <function PreExec.pre_exec at 0x78e6d4eb3eb0>
+  pre_request: <function PreRequest.pre_request at 0x78e6d4ed4040>
+  post_request: <function PostRequest.post_request at 0x78e6d4ed40d0>
+  child_exit: <function ChildExit.child_exit at 0x78e6d4ed41f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x78e6d4ed4310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x78e6d4ed4430>
+  on_exit: <function OnExit.on_exit at 0x78e6d4ed4550>
+  ssl_context: <function NewSSLContext.ssl_context at 0x78e6d4ed4670>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-30 22:01:10 +0000] [1175] [INFO] Starting gunicorn 22.0.0
+[2024-06-30 22:01:10 +0000] [1175] [DEBUG] Arbiter booted
+[2024-06-30 22:01:10 +0000] [1175] [INFO] Listening at: http://0.0.0.0:8000 (1175)
+[2024-06-30 22:01:10 +0000] [1175] [INFO] Using worker: sync
+[2024-06-30 22:01:10 +0000] [1176] [INFO] Booting worker with pid: 1176
+[2024-06-30 22:01:10 +0000] [1175] [DEBUG] 1 workers
+[2024-06-30 22:01:10 +0000] [1176] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/nido-bot/app.py", line 18, in <module>
+    slack_app = App(token=SLACK_BOT_TOKEN, signing_secret=SLACK_SIGNING_SECRET)
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/slack_bolt/app/app.py", line 349, in __init__
+    self._init_middleware_list(
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/slack_bolt/app/app.py", line 408, in _init_middleware_list
+    raise BoltError(error_token_required())
+slack_bolt.error.BoltError: Either an env variable `SLACK_BOT_TOKEN` or `token` argument in the constructor is required.
+[2024-06-30 22:01:10 +0000] [1176] [INFO] Worker exiting (pid: 1176)
+[2024-06-30 22:01:10 +0000] [1175] [ERROR] Worker (pid:1176) exited with code 3
+[2024-06-30 22:01:10 +0000] [1175] [ERROR] Shutting down: Master
+[2024-06-30 22:01:10 +0000] [1175] [ERROR] Reason: Worker failed to boot.
+[2024-07-02 19:01:56 +0000] [836] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: slack_bot.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7cb33e9735b0>
+  on_reload: <function OnReload.on_reload at 0x7cb33e9736d0>
+  when_ready: <function WhenReady.when_ready at 0x7cb33e9737f0>
+  pre_fork: <function Prefork.pre_fork at 0x7cb33e973910>
+  post_fork: <function Postfork.post_fork at 0x7cb33e973a30>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7cb33e973b50>
+  worker_int: <function WorkerInt.worker_int at 0x7cb33e973c70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7cb33e973d90>
+  pre_exec: <function PreExec.pre_exec at 0x7cb33e973eb0>
+  pre_request: <function PreRequest.pre_request at 0x7cb33e994040>
+  post_request: <function PostRequest.post_request at 0x7cb33e9940d0>
+  child_exit: <function ChildExit.child_exit at 0x7cb33e9941f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7cb33e994310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7cb33e994430>
+  on_exit: <function OnExit.on_exit at 0x7cb33e994550>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7cb33e994670>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-07-02 19:01:56 +0000] [836] [INFO] Starting gunicorn 22.0.0
+[2024-07-02 19:01:56 +0000] [836] [DEBUG] Arbiter booted
+[2024-07-02 19:01:56 +0000] [836] [INFO] Listening at: http://0.0.0.0:8000 (836)
+[2024-07-02 19:01:56 +0000] [836] [INFO] Using worker: sync
+[2024-07-02 19:01:56 +0000] [837] [INFO] Booting worker with pid: 837
+[2024-07-02 19:01:56 +0000] [836] [DEBUG] 1 workers
+[2024-07-02 19:01:57 +0000] [837] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/nido-bot/app.py", line 18, in <module>
+    slack_app = App(token=SLACK_BOT_TOKEN, signing_secret=SLACK_SIGNING_SECRET)
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/slack_bolt/app/app.py", line 349, in __init__
+    self._init_middleware_list(
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/slack_bolt/app/app.py", line 408, in _init_middleware_list
+    raise BoltError(error_token_required())
+slack_bolt.error.BoltError: Either an env variable `SLACK_BOT_TOKEN` or `token` argument in the constructor is required.
+[2024-07-02 19:01:57 +0000] [837] [INFO] Worker exiting (pid: 837)
+[2024-07-02 19:01:57 +0000] [836] [ERROR] Worker (pid:837) exited with code 3
+[2024-07-02 19:01:57 +0000] [836] [ERROR] Shutting down: Master
+[2024-07-02 19:01:57 +0000] [836] [ERROR] Reason: Worker failed to boot.
+[2024-07-02 19:02:48 +0000] [843] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: slack_bot.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7e188b1875b0>
+  on_reload: <function OnReload.on_reload at 0x7e188b1876d0>
+  when_ready: <function WhenReady.when_ready at 0x7e188b1877f0>
+  pre_fork: <function Prefork.pre_fork at 0x7e188b187910>
+  post_fork: <function Postfork.post_fork at 0x7e188b187a30>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7e188b187b50>
+  worker_int: <function WorkerInt.worker_int at 0x7e188b187c70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7e188b187d90>
+  pre_exec: <function PreExec.pre_exec at 0x7e188b187eb0>
+  pre_request: <function PreRequest.pre_request at 0x7e188b1a8040>
+  post_request: <function PostRequest.post_request at 0x7e188b1a80d0>
+  child_exit: <function ChildExit.child_exit at 0x7e188b1a81f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7e188b1a8310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7e188b1a8430>
+  on_exit: <function OnExit.on_exit at 0x7e188b1a8550>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7e188b1a8670>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-07-02 19:02:48 +0000] [843] [INFO] Starting gunicorn 22.0.0
+[2024-07-02 19:02:48 +0000] [843] [DEBUG] Arbiter booted
+[2024-07-02 19:02:48 +0000] [843] [INFO] Listening at: http://0.0.0.0:8000 (843)
+[2024-07-02 19:02:48 +0000] [843] [INFO] Using worker: sync
+[2024-07-02 19:02:48 +0000] [844] [INFO] Booting worker with pid: 844
+[2024-07-02 19:02:48 +0000] [843] [DEBUG] 1 workers
+[2024-07-02 19:02:48 +0000] [844] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/nido-bot/app.py", line 18, in <module>
+    slack_app = App(token=SLACK_BOT_TOKEN, signing_secret=SLACK_SIGNING_SECRET)
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/slack_bolt/app/app.py", line 349, in __init__
+    self._init_middleware_list(
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/slack_bolt/app/app.py", line 408, in _init_middleware_list
+    raise BoltError(error_token_required())
+slack_bolt.error.BoltError: Either an env variable `SLACK_BOT_TOKEN` or `token` argument in the constructor is required.
+[2024-07-02 19:02:48 +0000] [844] [INFO] Worker exiting (pid: 844)
+[2024-07-02 19:02:48 +0000] [843] [ERROR] Worker (pid:844) exited with code 3
+[2024-07-02 19:02:48 +0000] [843] [ERROR] Shutting down: Master
+[2024-07-02 19:02:48 +0000] [843] [ERROR] Reason: Worker failed to boot.
+[2024-07-02 19:02:58 +0000] [845] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ubuntu/nido-bot
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: slack_bot.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:flask_app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x75feba2475b0>
+  on_reload: <function OnReload.on_reload at 0x75feba2476d0>
+  when_ready: <function WhenReady.when_ready at 0x75feba2477f0>
+  pre_fork: <function Prefork.pre_fork at 0x75feba247910>
+  post_fork: <function Postfork.post_fork at 0x75feba247a30>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x75feba247b50>
+  worker_int: <function WorkerInt.worker_int at 0x75feba247c70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x75feba247d90>
+  pre_exec: <function PreExec.pre_exec at 0x75feba247eb0>
+  pre_request: <function PreRequest.pre_request at 0x75feba268040>
+  post_request: <function PostRequest.post_request at 0x75feba2680d0>
+  child_exit: <function ChildExit.child_exit at 0x75feba2681f0>
+  worker_exit: <function WorkerExit.worker_exit at 0x75feba268310>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x75feba268430>
+  on_exit: <function OnExit.on_exit at 0x75feba268550>
+  ssl_context: <function NewSSLContext.ssl_context at 0x75feba268670>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-07-02 19:02:58 +0000] [845] [INFO] Starting gunicorn 22.0.0
+[2024-07-02 19:02:58 +0000] [845] [DEBUG] Arbiter booted
+[2024-07-02 19:02:58 +0000] [845] [INFO] Listening at: http://0.0.0.0:8000 (845)
+[2024-07-02 19:02:58 +0000] [845] [INFO] Using worker: sync
+[2024-07-02 19:02:58 +0000] [846] [INFO] Booting worker with pid: 846
+[2024-07-02 19:02:58 +0000] [845] [DEBUG] 1 workers
+[2024-07-02 19:02:58 +0000] [846] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/nido-bot/app.py", line 18, in <module>
+    slack_app = App(token=SLACK_BOT_TOKEN, signing_secret=SLACK_SIGNING_SECRET)
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/slack_bolt/app/app.py", line 349, in __init__
+    self._init_middleware_list(
+  File "/home/ubuntu/venv/lib/python3.10/site-packages/slack_bolt/app/app.py", line 408, in _init_middleware_list
+    raise BoltError(error_token_required())
+slack_bolt.error.BoltError: Either an env variable `SLACK_BOT_TOKEN` or `token` argument in the constructor is required.
+[2024-07-02 19:02:58 +0000] [846] [INFO] Worker exiting (pid: 846)
+[2024-07-02 19:02:58 +0000] [845] [ERROR] Worker (pid:846) exited with code 3
+[2024-07-02 19:02:58 +0000] [845] [ERROR] Shutting down: Master
+[2024-07-02 19:02:58 +0000] [845] [ERROR] Reason: Worker failed to boot.

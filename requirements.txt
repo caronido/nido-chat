@@ -1,0 +1,11 @@
+slack-bolt
+PyPDF2
+Pillow
+pytesseract
+pdf2image
+langchain
+requests
+openai
+langchain-community
+chromadb
+tiktoken
